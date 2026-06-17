@@ -1,0 +1,14 @@
+module sidebar-right
+
+singleton Theme             1.0 Theme.qml
+BaseCard          1.0 BaseCard.qml
+GlassButton       1.0 GlassButton.qml
+NotificationCard  1.0 NotificationCard.qml
+CalendarCard      1.0 CalendarCard.qml
+WeatherCard       1.0 WeatherCard.qml
+SystemCard        1.0 SystemCard.qml
+KeyboardCard      1.0 KeyboardCard.qml
+PowerCard         1.0 PowerCard.qml
+VolumeCard        1.0 VolumeCard.qml
+NetworkCard       1.0 NetworkCard.qml
+SidebarWindow     1.0 SidebarWindow.qml
