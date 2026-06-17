@@ -34,8 +34,8 @@ PATH_IMAGES="$PICTURES/$FOLDER_IMAGES"
 FILENAME_IMAGE_DATETIME="$FILENAME_IMAGE $(date +%Y-%m-%d_%H-%M-%S).png"
 PATH_VIDEOS="$VIDEOS/$FOLDER_VIDEOS"
 FILENAME_VIDEO_DATETIME="$FILENAME_VIDEO $(date +%Y-%m-%d_%H-%M-%S).mkv"
-PID_FILE="/tmp/gpu-screen-recorder.pid"
-STATE_FILE="/tmp/gpu-screen-recorder.state"
+PID_FILE="$HYPR_CACHE_DIR/gpu-screen-recorder.pid"
+STATE_FILE="$HYPR_CACHE_DIR/gpu-screen-recorder.state"
 
 for OLD_NAME in "Capturas de tela" "Screenshots"; do
   [ "$OLD_NAME" = "$FOLDER_IMAGES" ] && continue

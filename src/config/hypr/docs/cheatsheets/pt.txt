@@ -1,0 +1,57 @@
+Hyprland Cheatsheets
+====================
+
+Atalhos do ambiente de Desktop »
+------------------------------------------------
+ATALHO                                 DESCRIÇÃO
+
+01 - SUPER (Win) + 1..9               = Áreas de trabalho
+02 - SUPER (Win) + Shift + Space      = Ativa/Desativa Janela flutuante
+03 - SUPER (Win) +                = Focar janela tileada por direção
+04 - SUPER (Win) + Ctrl +           = Ciclar foco entre janelas (tileadas e flutuantes)
+05 - Ctrl + Alt +                   = Circular entre áreas de trabalho
+06 - ALT + Tab                        = Circular entre todas janelas
+07 - SUPER (Win) + r                  = Entrar modo redimensionar janela (apenas em janela flutuante)
+                                  = Redimencionar
+     SHIFT +                      = Mover janela
+     Esc                              = Sair modo redimencionar
+08 - SUPER (Win) + Mouse Button 1     = Arrasta janela (apenas em janela flutuante)
+09 - SUPER (Win) + Mouse Button 2     = Modo redimensionar janela (apenas em janela flutuante)
+10 - SUPER (Win) + f                  = Tela cheia
+11 - SUPER (Win) + w                  = Agrupar/Desagrupar em abas
+12 - SUPER (Win) + Shift +          = Mover janela
+13 - SUPER (Win) + q                  = Fechar janela
+14 - SUPER (Win) + Shift + 1..9       = Mover janela para a área de trabalho
+15 - Print                            = Capturar área selecionada
+16 - SUPER (Win) + Print              = Capturar janela em foco
+17 - SUPER (Win) + Shift + Print      = Capturar tela inteira
+18 - SUPER (Win) + g                  = Iniciar/Pausar/Retormar gravação de tela
+19 - SUPER (Win) + Shift + g          = Parar e salvar gravação de tela
+20 - SUPER (Win) + ,                  = Abre/Fecha sidebar de notificações
+21 - SUPER (Win) + Shift + l          = Bloquear sistema
+22 - SUPER (Win) + Shift + m          = Desligar/Ligar monitor (não é suspender)
+23 - SUPER (Win) + Esc                = Sair do sistema
+24 - SUPER (Win) + Shift + r          = Recarregar Hyprland
+
+Atalhos de software »
+------------------------------------------------
+ATALHO                                 DESCRIÇÃO
+
+25 - SUPER (Win) + Enter              = Terminal
+26 - SUPER (Win) + Space              = Gerenciador de arquivos
+27 - SUPER (Win) + b                  = Navegador padrão
+28 - SUPER (Win) + d                  = Lançador de programas
+29 - SUPER (Win) + c                  = Calculadora
+30 - SUPER (Win) + Ctrl + /?          = Cheatsheets do Kitty
+31 - SUPER (Win) + h                  = Histórico no Clipboard
+32 - SUPER (Win) + Shift + h          = Apagar histórico do Clipboard
+33 - SUPER (Win) + p                  = Seletor de cores (Color Picker)
+34 - ALT + SHIFT                      = Altera teclado entre "pt-br (abnt2)" e "us"
+
+
+Diretórios »
+-----------------------------------------------
+
+Hyprland configs: $HOME/.config/hypr/
+Hyprland logs:    $HOME/.local/state/hyprland/
+Waybar configs:   $HOME/.config/waybar/

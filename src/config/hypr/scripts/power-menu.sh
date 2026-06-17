@@ -1,15 +1,14 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/hypr/scripts/base.sh"
+. "$HOME/.config/my-hyprland/sh/bootstrap.sh"
 
 do_lock() {
-  IMG="/tmp/hyprlock-wallpaper-blur.png"
-  if [ ! -f "$IMG" ] || [ "$WALLPAPER_PATH" -nt "$IMG" ]; then
+  if [ ! -f "$HYPRLOCK_PATH" ] || [ "$WALLPAPER_PATH" -nt "$HYPRLOCK_PATH" ]; then
     magick "$WALLPAPER_PATH" \
       -blur 0x2 \
       -fill black -colorize 20% \
-      "$IMG"
+      "$HYPRLOCK_PATH"
   fi
   exec hyprlock
 }
@@ -17,40 +16,45 @@ do_lock() {
 # -- power-menu.sh --lock
 # Also used for the keyboard shortcut Mod+Shift+l
 # ------------------------------------------------------------------------------
-[ "$1" = "--lock" ] && do_lock
+[ "$1" = "--lock" ] && {
+  do_lock
+  exit $?
+}
 
 # -- Translate -----------------------------------------------------------------
-case "${LC_MESSAGES:-${LANG:-en}}" in
-pt*)
+if locale_is_pt; then
   LOCK="Bloquear"
   SUSPEND="Suspender"
   LOGOUT="Sair"
   REBOOT="Reiniciar"
   SHUTDOWN="Desligar"
-  ;;
-*)
+else
   LOCK="Lock"
   SUSPEND="Suspend"
   LOGOUT="Log Out"
   REBOOT="Reboot"
   SHUTDOWN="Shut Down"
-  ;;
-esac
+fi
 
-# -- Menu rofi -----------------------------------------------------------------
-CHOICE=$(printf '%s\n' \
-  "$LOCK" \
-  "$SUSPEND" \
-  "$LOGOUT" \
-  "$REBOOT" \
-  "$SHUTDOWN" |
-  rofi \
-    -dmenu \
-    -p ">" \
-    -theme-str 'window {width: 220px;}' \
-    -theme-str 'listview {lines: 5;}' \
-    -no-custom \
-    -i)
+# -- Menu -----------------------------------------------------------------
+if [ $FINDER = "/usr/bin/rofi" ]; then
+  CHOICE=$(printf '%s\n' \
+    "$LOCK" \
+    "$SUSPEND" \
+    "$LOGOUT" \
+    "$REBOOT" \
+    "$SHUTDOWN" |
+    $FINDER -dmenu -p ">" \
+    -theme-str 'window {width: 220px;} listview {lines: 5;}' -no-custom -i)
+elif [ $FINDER = "/usr/bin/wofi" ]; then
+  CHOICE=$(printf '%s\n' \
+    "$LOCK" \
+    "$SUSPEND" \
+    "$LOGOUT" \
+    "$REBOOT" \
+    "$SHUTDOWN" |
+    $FINDER)
+fi
 
 # ── Despatch ------------------------------------------------------------------
 case "$CHOICE" in

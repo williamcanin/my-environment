@@ -1,79 +1,103 @@
 -- ===================================
---  Hyprland 0.55+ CONFIG
---  GTX 750 Ti / driver Nouveau
+--  Hyprland 0.55+
 --  File: ~/.config/hypr/hyprland.lua
+--  By: William C. Canin
 -- ===================================
 
 -- Monitor -------------------------------------------------------------------------------------------------------------
 hl.monitor({
-  output = "", -- "" = any monitor
-  mode = "preferred",
-  position = "auto",
-  scale = "auto",
+  output = "HDMI-A-1", -- "" = any monitor
+  mode = "1920x1080@74.97", -- "preferred" = any mode
+  position = "0x0", -- "auto" = automatic
+  scale = 1,
 })
 
 -- Environment variables -----------------------------------------------------------------------------------------------
-hl.env("XCURSOR_SIZE", "24")
+
+-- Cursor size
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", "24")
+-- Forces Qt apps to use Kvantum as their theme engine
+hl.env("QT_STYLE_OVERRIDE", "kvantum")
+-- Use qt5ct to configure Qt (font, icons, style)
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+-- Forces Firefox to run natively on Wayland
 hl.env("MOZ_ENABLE_WAYLAND", "1")
--- Nouveau / GTX 750 Ti
-hl.env("WLR_NO_HARDWARE_CURSORS", "1")
-hl.env("WLR_RENDERER_ALLOW_SOFTWARE", "1")
+-- XDGs
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+-- Theme
+-- hl.env("GTK2_RC_FILES", "/dev/null")
+-- hl.env("GTK_THEME", "Hyprland-Dark-Teal")
 
 -- Global configuration ------------------------------------------------------------------------------------------------
 hl.config({
   general = {
     gaps_in = 3,
-    gaps_out = 10,
+    gaps_out = 17,
     border_size = 1,
+
     col = {
-      active_border = {
-        colors = { "rgba(3aa99fff)", "rgba(303030ff)" },
-        angle = 45,
-      },
-      inactive_border = "rgb(303030)",
-    },
-    groupbar = {
-      col = {
-        active_border = {
-          colors = { "rgba(3aa99fff)", "rgba(303030ff)" },
-        },
-      },
+      active_border = "rgba(3aa99fff)",
+      inactive_border = "rgba(303030ff)",
     },
     layout = "dwindle",
     allow_tearing = false,
   },
 
+  group = {
+    merge_groups_on_drag = true,
+    col = {
+      border_active = "rgba(3aa99fff)",
+      border_inactive = "rgba(303030ff)",
+      border_locked_active = "rgba(3aa99fff)",
+      border_locked_inactive = "rgba(303030ff)",
+    },
+
+    groupbar = {
+      enabled = true,
+      font_size = 14,
+      render_titles = false,
+      text_color = "rgba(ffffffff)",
+      col = {
+        active = "rgba(3aa99fff)",
+        inactive = "rgba(303030cc)",
+        locked_active = "rgba(3aa99fff)",
+        locked_inactive = "rgba(303030cc)",
+      },
+    },
+  },
+
   decoration = {
+    active_opacity = 1.0,
+    inactive_opacity = 1.0,
     rounding = 8,
     rounding_power = 2,
-    active_opacity = 0.98,
-    inactive_opacity = 0.85,
     fullscreen_opacity = 1.0,
-    dim_inactive = true,
+    dim_inactive = false,
     dim_strength = 0.08,
 
     shadow = {
       enabled = true,
-      range = 20,
-      render_power = 3,
+      range = 6,
+      render_power = 2,
       color = 0xcc1a1a2e,
       color_inactive = 0x661a1a2e,
     },
 
     blur = {
       enabled = true,
-      size = 6,
-      passes = 3,
+      size = 3,
+      passes = 1,
       new_optimizations = true,
       xray = false,
-      noise = 0.02,
+      noise = 0.0,
       contrast = 0.9,
       brightness = 0.8,
       vibrancy = 0.1,
       ignore_opacity = false,
-      popups = true,
+      popups = false,
     },
   },
 
@@ -93,6 +117,15 @@ hl.config({
     force_default_wallpaper = 0,
     disable_hyprland_logo = true,
     disable_splash_rendering = true,
+  },
+
+  cursor = {
+    no_hardware_cursors = 2,
+    use_cpu_buffer = 2,
+  },
+
+  render = {
+    new_render_scheduling = true,
   },
 
   -- XWayland enabled/disabled
@@ -168,11 +201,25 @@ hl.animation({
   style = "slide",
 })
 
--- Window Rules (float) ------------------------------------------------------------------------------------------------
+-- Blur ----------------------------------------------------------------------------------------------------------------
+hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
+hl.layer_rule({ match = { namespace = "quickshell" }, blur = true })
+hl.layer_rule({ match = { namespace = "rofi" }, blur = true })
+
+-- Window Rules  -------------------------------------------------------------------------------------------------------
+hl.window_rule({
+  match = { class = "org.gnome.Nautilus" },
+  float = true,
+  size = "1399 920",
+  center = true,
+  opacity = "0.94 0.94",
+})
+hl.window_rule({ match = { class = "com.system76.CosmicFiles" }, animation = "none" })
 hl.window_rule({
   match = { class = ".*pwvucontrol.*" },
   float = true,
   size = "700 450",
+  center = true,
 })
 hl.window_rule({ match = { class = ".*pavucontrol.*" }, float = true })
 hl.window_rule({ match = { class = "org.gnome.FileRoller" }, float = true })
@@ -182,94 +229,208 @@ hl.window_rule({
   match = { class = "kitty", title = ".*nmtui.*" },
   float = true,
   size = "900 900",
+  center = true,
+})
+hl.window_rule({
+  match = { class = "kitty", title = ".*nvim.*" },
+  opacity = "0.45 0.70",
 })
 hl.window_rule({ match = { class = "blueman-manager" }, float = true })
 hl.window_rule({ match = { class = "xdg-desktop-portal-gtk" }, float = true })
 
 -- Transparency at the terminals ---------------------------------------------------------------------------------------
-hl.window_rule({ match = { class = "kitty" }, opacity = "0.90 0.85" })
-hl.window_rule({ match = { class = "foot" }, opacity = "0.90 0.85" })
-hl.window_rule({ match = { class = "Alacritty" }, opacity = "0.90 0.85" })
+hl.window_rule({ match = { class = "kitty" }, opacity = "1.0 1.0" })
+hl.window_rule({ match = { class = "foot" }, opacity = "1.0 1.0" })
+hl.window_rule({ match = { class = "Alacritty" }, opacity = "1.0 1.0" })
 
--- Keybindings =========================================================================================================
+-- ================ Keybindings ================
 
 -- Variables -----------------------------------------------------------------------------------------------------------
 local mod = "SUPER"
 
--- Moving between windows ----------------------------------------------------------------------------------------------
--- hl.bind(mod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
--- hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
--- hl.bind(mod .. " + SHIFT + TAB", hl.dsp.window.cycle_next({ prev = true }))
+-- Moving between windows (Using: snappy-switcher) ---------------------------------------------------------------------
+hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+hl.bind("ALT + SHIFT + Tab", hl.dsp.exec_cmd("snappy-switcher prev --mod alt"))
 
--- Shortcuts -----------------------------------------------------------------------------------------------------------
-hl.bind(mod .. " + SHIFT + slash", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/shortcuts.sh"))
+-- All cheatsheets -----------------------------------------------------------------------------------------------------
+hl.bind(mod .. " + SHIFT + slash", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/cheatsheets.sh"))
+
+-- Cheatsheets Kitty ---------------------------------------------------------------------------------------------------
+hl.bind(mod .. " + CTRL + slash", hl.dsp.exec_cmd("sh ~/.config/kitty/scripts/cheatsheets.sh"))
+
+-- Open Terminal -------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + Return", hl.dsp.exec_cmd("kitty"))
+
+-- File Manager --------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + Space", hl.dsp.exec_cmd("nautilus"))
+
+-- Sidebar Settings ----------------------------------------------------------------------------------------------------
+hl.bind(mod .. " + comma", hl.dsp.exec_cmd("qs -c sidebar-right ipc call sidebar toggle"))
+
+-- Finder --------------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + D", hl.dsp.exec_cmd('rofi -show drun -display-drun "drun"'))
+-- hl.bind(mod .. " + D", hl.dsp.exec_cmd("wofi"))
+
+-- Maximize Window -----------------------------------------------------------------------------------------------------
+hl.bind(mod .. " + S", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+
+-- Closed Window -------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + Q", hl.dsp.window.close())
-hl.bind(mod .. " + SHIFT + space", hl.dsp.window.float({ action = "toggle" }))
+
+-- Enable/Disable Floating Window --------------------------------------------------------------------------------------
+hl.bind(mod .. " + SHIFT + space", function()
+  hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+
+  local win = hl.get_active_window()
+
+  if win and win.floating then
+    hl.dispatch(hl.dsp.window.resize({
+      x = 1399,
+      y = 920,
+    }))
+  end
+end)
+
+-- Window fullscreen ---------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
+
+-- Split vertical/horizontal -------------------------------------------------------------------------------------------
 hl.bind(mod .. " + E", hl.dsp.layout("togglesplit"))
 
--- Window mode tab -----------------------------------------------------------------------------------------------------
--- BUG
+-- Tabbed windows ------------------------------------------------------------------------------------------------------
+-- Groups all windows in the current workspace into tabs.
 hl.bind(mod .. " + W", function()
-  local ws = hl.get_active_workspace()
-  if ws == nil then
+  local active = hl.get_active_window()
+  if not active then
     return
   end
 
-  local all_wins = hl.get_windows()
-  if all_wins == nil or #all_wins == 0 then
-    return
-  end
+  local ws = active.workspace.id
 
-  local wins = {}
-  for _, w in ipairs(all_wins) do
-    if w.workspace ~= nil and w.workspace.id == ws.id then
-      table.insert(wins, w)
+  hl.dispatch(hl.dsp.group.toggle())
+
+  for _, w in ipairs(hl.get_windows()) do
+    if w.workspace.id == ws and w.address ~= active.address then
+      hl.dispatch(hl.dsp.focus({
+        window = "address:" .. w.address,
+      }))
+
+      for _, dir in ipairs({ "l", "r", "u", "d" }) do
+        pcall(function()
+          hl.dispatch(hl.dsp.window.move({
+            into_group = dir,
+          }))
+        end)
+      end
     end
   end
 
-  if #wins == 0 then
+  hl.dispatch(hl.dsp.focus({
+    window = "address:" .. active.address,
+  }))
+end)
+
+-- Navigate between tabs -----------------------------------------------------------------------------------------------
+hl.bind(mod .. " + Tab", hl.dsp.group.next())
+
+-- Navigate between windows --------------------------------------------------------------------------------------------
+hl.bind(mod .. " + left", hl.dsp.focus({ direction = "left" }))
+hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
+hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
+
+-- Cycle focus between all windows in current workspace (including floating) -------------------------------------------
+hl.bind(mod .. " + CTRL + right", function()
+  local wins = hl.get_windows()
+  local active = hl.get_active_window()
+  if not active then
     return
   end
 
-  hl.dispatch(hl.dsp.focus({ window = wins[1].address }))
-  hl.dispatch(hl.dsp.group.toggle())
+  -- Filter only current workspace
+  local ws_wins = {}
+  for _, w in ipairs(wins) do
+    if w.workspace.id == active.workspace.id then
+      table.insert(ws_wins, w)
+    end
+  end
 
-  for i = 2, #wins do
-    if wins[i] ~= nil and wins[i].address ~= nil then
-      hl.dispatch(hl.dsp.focus({ window = wins[i].address }))
-      hl.dispatch(hl.dsp.group.toggle())
+  for i, w in ipairs(ws_wins) do
+    if w.address == active.address then
+      local next = ws_wins[i + 1] or ws_wins[1]
+      hl.dispatch(hl.dsp.focus({ window = "address:" .. next.address }))
+      break
     end
   end
 end)
 
--- hl.bind(mod .. " + W", hl.dsp.group.toggle())
--- hl.bind(mod .. " + SHIFT + W", hl.dsp.group.lock())
+hl.bind(mod .. " + CTRL + left", function()
+  local wins = hl.get_windows()
+  local active = hl.get_active_window()
+  if not active then
+    return
+  end
 
--- -- Navegate between window / group tabs --------------------------------------------------------------------------------
--- hl.bind(mod .. " + left", function()
---   local w = hl.get_active_window()
---   if w ~= nil and w.group then
---     hl.dispatch(hl.dsp.group.prev())
---   else
---     hl.dispatch(hl.dsp.focus({ direction = "left" }))
---   end
--- end)
+  local ws_wins = {}
+  for _, w in ipairs(wins) do
+    if w.workspace.id == active.workspace.id then
+      table.insert(ws_wins, w)
+    end
+  end
 
--- hl.bind(mod .. " + right", function()
---   local w = hl.get_active_window()
---   if w ~= nil and w.group then
---     hl.dispatch(hl.dsp.group.next())
---   else
---     hl.dispatch(hl.dsp.focus({ direction = "right" }))
---   end
--- end)
+  for i, w in ipairs(ws_wins) do
+    if w.address == active.address then
+      local prev = ws_wins[i - 1] or ws_wins[#ws_wins]
+      hl.dispatch(hl.dsp.focus({ window = "address:" .. prev.address }))
+      break
+    end
+  end
+end)
 
--- hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
--- hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
+-- Cycle workspaces in loop (like GNOME) -------------------------------------------------------------------------------
+local function get_sorted_workspaces()
+  local wins = hl.get_windows()
+  local seen = {}
+  local ws_ids = {}
+  for _, w in ipairs(wins) do
+    if not seen[w.workspace.id] then
+      seen[w.workspace.id] = true
+      table.insert(ws_ids, w.workspace.id)
+    end
+  end
+  table.sort(ws_ids)
+  return ws_ids
+end
+
+hl.bind("CTRL + ALT + right", function()
+  local active = hl.get_active_window()
+  if not active then
+    return
+  end
+  local ws_ids = get_sorted_workspaces()
+  for i, id in ipairs(ws_ids) do
+    if id == active.workspace.id then
+      local next = ws_ids[i + 1] or ws_ids[1]
+      hl.dispatch(hl.dsp.focus({ workspace = next }))
+      break
+    end
+  end
+end)
+
+hl.bind("CTRL + ALT + left", function()
+  local active = hl.get_active_window()
+  if not active then
+    return
+  end
+  local ws_ids = get_sorted_workspaces()
+  for i, id in ipairs(ws_ids) do
+    if id == active.workspace.id then
+      local prev = ws_ids[i - 1] or ws_ids[#ws_ids]
+      hl.dispatch(hl.dsp.focus({ workspace = prev }))
+      break
+    end
+  end
+end)
 
 -- Move window float ---------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
@@ -307,6 +468,9 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl stop"))
 
+-- Turn the monitor off/on ---------------------------------------------------------------------------------------------
+hl.bind(mod .. " + SHIFT + M", hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.dpms(\"toggle\")'"))
+
 -- Default browser -----------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + B", hl.dsp.exec_cmd("xdg-open https://"))
 
@@ -323,9 +487,55 @@ hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --image-r
 hl.bind(mod .. " + Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --image-window"))
 hl.bind(mod .. " + SHIFT + Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh --image-full"))
 
--- Resize Window (mode float) ------------------------------------------------------------------------------------------
-hl.bind(mod .. " + R", hl.dsp.submap("resize"))
--- Witch mouse
+-- Mode Resize Window (keyboard) ---------------------------------------------------------------------------------------
+local _in_resize = false
+
+hl.bind(mod .. " + R", function()
+  local w = hl.get_active_window()
+  if w == nil then
+    return
+  end
+
+  -- Toggle off
+  if _in_resize then
+    _in_resize = false
+    hl.dispatch(hl.dsp.submap("reset"))
+    return
+  end
+
+  -- Only enter resize if window is floating
+  if not w.floating then
+    return
+  end
+
+  _in_resize = true
+  hl.dispatch(hl.dsp.submap("resize"))
+end)
+
+hl.define_submap("resize", function()
+  hl.bind("right", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
+  hl.bind("left", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
+  hl.bind("down", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
+  hl.bind("up", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
+
+  -- Move window
+  hl.bind("SHIFT + right", hl.dsp.window.move({ x = 20, y = 0, relative = true }), { repeating = true })
+  hl.bind("SHIFT + left", hl.dsp.window.move({ x = -20, y = 0, relative = true }), { repeating = true })
+  hl.bind("SHIFT + down", hl.dsp.window.move({ x = 0, y = 20, relative = true }), { repeating = true })
+  hl.bind("SHIFT + up", hl.dsp.window.move({ x = 0, y = -20, relative = true }), { repeating = true })
+
+  -- Escape/Return: exits submap
+  hl.bind("escape", function()
+    _in_resize = false
+    hl.dispatch(hl.dsp.submap("reset"))
+  end)
+  hl.bind("Return", function()
+    _in_resize = false
+    hl.dispatch(hl.dsp.submap("reset"))
+  end)
+end)
+
+-- Mode Resize Window (witch mouse) -----------------------------------------------------------------------------------------
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
@@ -339,7 +549,7 @@ hl.bind(mod .. " + P", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd("rofi -show calc -modi calc -no-show-match -no-sort"))
 
 -- Exit Hyprland -------------------------------------------------------------------------------------------------------
-hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh"))
+hl.bind(mod .. " + escape", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh"))
 
 -- Lock session --------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh --lock"))
@@ -349,10 +559,5 @@ hl.bind(mod .. " + SHIFT + R", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/init.s
 
 -- Autostart -----------------------------------------------------------------------------------------------------------
 hl.on("hyprland.start", function()
-  hl.exec_cmd("hyprpaper")
-  hl.exec_cmd("hypridle")
-  hl.exec_cmd("sh ~/.config/hypr/scripts/init.sh --waybars")
-  hl.exec_cmd("mako")
-  hl.exec_cmd("wl-paste --type text --watch cliphist store")
-  hl.exec_cmd("wl-paste --type image --watch cliphist store")
+  hl.exec_cmd("sh ~/.config/hypr/scripts/init.sh --started")
 end)
