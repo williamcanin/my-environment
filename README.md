@@ -14,29 +14,29 @@ painel lateral de (informações do sistema) e uma sidebar na direita com Quicks
   <tr>
     <td align="center">
       <a href="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-1.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-1.png" width="200" alt="Preview 1">
+        <img src=".docs/images/preview-1.png" width="200" alt="Preview 1">
       </a>
     </td>
     <td align="center">
       <a href="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-2.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-2.png" width="200" alt="Preview 2">
+        <img src=".docs/images/preview-2.png" width="200" alt="Preview 2">
       </a>
     </td>
     <td align="center">
       <a href="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-3.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-3.png" width="200" alt="Preview 3">
+        <img src=".docs/images/preview-3.png" width="200" alt="Preview 3">
       </a>
     </td>
   </tr>
   <tr>
     <td align="center">
       <a href="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-4.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-4.png" width="200" alt="Preview 4">
+        <img src=".docs/images/preview-4.png" width="200" alt="Preview 4">
       </a>
     </td>
     <td align="center">
       <a href="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-5.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-hyprland/main/.docs/images/preview-5.png" width="200" alt="Preview 5">
+        <img src=".docs/images/preview-5.png" width="200" alt="Preview 5">
       </a>
     </td>
     <td align="center"></td>
