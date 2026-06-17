@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/my-hyprland/sh/bootstrap.sh"
+. "$HOME/.config/.environment-bootstrap"
 
 # To use this script, you must create the following file:
 #

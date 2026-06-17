@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/my-hyprland/sh/bootstrap.sh"
+. "$HOME/.config/.environment-bootstrap"
 
 N_PROC="5"
 PS="/usr/bin/ps"

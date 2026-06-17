@@ -146,6 +146,13 @@ copy_configs() {
     ok "$name"
   done
 
+  # Install environment bootstrap (path fixo)
+  ENV_BOOTSTRAP_SRC="$CONFIG_SRC/my-environment/.environment-bootstrap"
+  if [ -f "$ENV_BOOTSTRAP_SRC" ]; then
+    cp -v "$ENV_BOOTSTRAP_SRC" "$CONFIG_DST/.environment-bootstrap"
+    ok ".environment-bootstrap"
+  fi
+
   # Remove backups older than 30 days
   find "$CONFIG_DST" -maxdepth 1 -name "*.bak.*" -mtime +30 | while IFS= read -r old; do
     rm -rfv "$old"
