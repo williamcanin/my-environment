@@ -7,202 +7,39 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-. "$SCRIPT_DIR/libs/base.lib"
 . "$SCRIPT_DIR/libs/version.lib"
 . "$SCRIPT_DIR/libs/msg.lib"
 . "$SCRIPT_DIR/libs/help.lib"
-. "$SCRIPT_DIR/libs/symlink.lib"
-. "$SCRIPT_DIR/libs/term.lib"
-. "$SCRIPT_DIR/libs/cosmic.lib"
 . "$SCRIPT_DIR/libs/copyright.lib"
 
+select_distro() {
+  printf "\n" >&2
+  log "Select your distribution:" "\n" >&2
+  echo "  [1] Arch Linux" >&2
+  echo "  [2] Fedora" >&2
+  printf "Reply > " >&2
+  read -r choice
 
-CONFIG_SRC="$REPO_ROOT/src/config"
-CONFIG_DST="$HOME/.config"
-FONTS_SRC="$REPO_ROOT/src/fonts"
-FONTS_DST="$HOME/.local/share/fonts"
-BASE_DEPS="git base-devel go gcc lua wayland wayland-protocols"
-PACKAGES="
-  firefox hyprland hyprland-qt-support hyprpaper hypridle hyprshutdown hyprlock
-  hyprshot rofi-wayland kitty wev playerctl brightnessctl moreutils quickshell-git
-  flameshot grim cliphist wl-clipboard slurp zsh gpu-screen-recorder wf-recorder
-  xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk mpv
-  xdg-desktop-portal-wlr unzip zathura terminus-font nautilus imagemagick
-  dunst jq rofimoji rofi-calc bottom btop satty gsimplecal calcurse hyprpicker
-  kooha xdg-utils gtk3 gtk4 adwaita-icon-theme noto-fonts noto-fonts-emoji uwsm
-  ttf-nerd-fonts-symbols-mono ttf-jetbrains-mono-nerd otf-font-awesome vivid
-  libnotify pamixer wireplumber networkmanager swappy foot snappy-switcher
-  smog-bin xarchiver zip just libqalculate fontconfig qt5-quickcontrols2
-  kvantum nwg-look qt5ct qt6ct qt6-declarative qt6-tools cosmic-files
-  cosmic-settings file-roller pwvucontrol wtype fastfetch polkit-gnome bluez
-  bluez-utils blueman imv
-"
-
-settings() {
-  echo "open" > "$WAYBAR_CACHE_DIR/sidebar-state"
-}
-
-install_yay () {
-  log "yay not found — installing dependencies..." "\n"
-
-  sudo pacman -S --needed --noconfirm $BASE_DEPS || die "Failed to install yay dependencies."
-
-  tmp="$(mktemp -d)"
-  trap 'rm -rf "$tmp"' EXIT INT TERM
-
-  log "Cloning yay..." "\n"
-  git clone https://aur.archlinux.org/yay.git "$tmp/yay" || die "Failed to clone yay."
-
-  log "Compiling and installing yay..." "\n"
-  (cd "$tmp/yay" && makepkg -si --noconfirm) || die "Failed to compile yay."
-
-  ok "Yay, installed!"
-}
-
-ensure_yay () {
-  if command -v yay >/dev/null 2>&1; then
-    ok "Yay, it's already installed."
-  else
-    install_yay
-  fi
-}
-
-default_apps() {
-  # Browser
-  if command -v xdg-settings >/dev/null 2>&1; then
-    if xdg-settings set default-web-browser firefox.desktop; then
-      ok "Default browser applied to: Firefox."
-    else
-      warn "Could not set Firefox as default browser."
-    fi
-  else
-    warn "xdg-settings not found — default browser not changed."
-  fi
-}
-
-set_gsettings () {
-  if command -v gsettings >/dev/null 2>&1; then
-
-    # GTK Theme
-    if command -v gsettings >/dev/null 2>&1; then
-      if
-        gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME" &&
-        gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME" &&
-        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &&
-        gsettings set org.gnome.desktop.interface cursor-theme "$GTK_CURSOR"
-      then
-        ok "GTK theme applied."
-      else
-        warn "Could not apply GTK theme."
+  case "$choice" in
+    1)
+      if ! grep -qi "arch" /etc/os-release 2>/dev/null; then
+        die "This system does not appear to be Arch Linux. Aborting."
       fi
-    else
-      warn "gsettings not found — GTK theme not changed."
-    fi
-
-    # Disabled buttons: minimize,maximize,close.
-    if
-      gsettings set org.gnome.desktop.wm.preferences button-layout "$BUTTON_LAYOUT"
-    then
-        ok "Disabled buttons 'minimize,maximize,close' in window"
-    fi
-  fi
+      echo "arch"
+      ;;
+    2)
+      if ! grep -qi "fedora" /etc/os-release 2>/dev/null; then
+        die "This system does not appear to be Fedora. Aborting."
+      fi
+      echo "fedora"
+      ;;
+    *)
+      die "Invalid option: $choice"
+      ;;
+  esac
 }
 
-cleaner() {
-  # Removed build on "gvfs-metadata". This prevents certain compilation errors.
-  rm -rf "$HOME"/.local/share/gvfs-metadata/
-}
-
-install_packages () {
-  log "Installing necessary packages..." "\n"
-
-  yay -S --needed --noconfirm $PACKAGES || die "Failed to install required packages."
-  ok "All packages installed."
-}
-
-copy_configs() {
-  [ -d "$CONFIG_SRC" ] || die "Directory of configurations not found: $CONFIG_SRC."
-
-  log "Copying configs → $CONFIG_DST" "\n"
-  mkdir -p "$CONFIG_DST"
-
-  # Permissions .sh
-  find "$CONFIG_SRC" -type f -name "*.sh" -exec chmod +x {} \;
-
-  for src_dir in "$CONFIG_SRC"/*/; do
-    [ -d "$src_dir" ] || continue
-
-    name="${src_dir%/}"
-    name="${name##*/}"
-    dst_dir="$CONFIG_DST/$name"
-
-    if [ -d "$dst_dir" ]; then
-      backup="${dst_dir}.bak.$(date +%Y%m%d%H%M%S)"
-      mv "$dst_dir" "$backup"
-      warn "$name — backup saved in $backup"
-    fi
-
-    cp -rv "$src_dir" "$CONFIG_DST/"
-    ok "$name"
-  done
-
-  # Install environment bootstrap (path fixo)
-  ENV_BOOTSTRAP_SRC="$CONFIG_SRC/my-environment/.environment-bootstrap"
-  if [ -f "$ENV_BOOTSTRAP_SRC" ]; then
-    cp -v "$ENV_BOOTSTRAP_SRC" "$CONFIG_DST/.environment-bootstrap"
-    ok ".environment-bootstrap"
-  fi
-
-  # Remove backups older than 30 days
-  find "$CONFIG_DST" -maxdepth 1 -name "*.bak.*" -mtime +30 | while IFS= read -r old; do
-    rm -rfv "$old"
-    warn "Old backup removed: $old"
-  done
-}
-
-symlinks() {
-  log "Creating symbolic links..." "\n"
-  mkdir -p "$HOME/.local/bin"
-
-  # Kitty Help shortcuts
-  symlink "$HOME/.config/kitty/scripts/shortcuts.sh" "$HOME/.local/bin/kitty-help"
-
-  ok "Creation of symbolic links completed."
-  warn "Adding \"\$HOME/.local/bin\" in PATH"
-}
-
-copy_fonts() {
-  [ -d "$FONTS_SRC" ] || {
-    warn "Fonts directory not found: $FONTS_SRC — jumping."
-    return
-  }
-
-  log "Copying fonts → $FONTS_DST" "\n"
-  mkdir -p "$FONTS_DST"
-
-  count=0
-  for font in "$FONTS_SRC"/*; do
-    [ -e "$font" ] || continue
-    cp -rfv "$font" "$FONTS_DST/"
-    count=$((count + 1))
-  done
-
-  if [ "$count" -eq 0 ]; then
-    warn "No source found in $FONTS_SRC."
-  else
-    ok "$count file(s)/folder(s) copied."
-
-    if command -v fc-cache >/dev/null 2>&1; then
-      log "Updating font cache..." "\n"
-      fc-cache -f "$FONTS_DST"
-      ok "Cache fonts updated."
-    else
-      warn "fc-cache not found — refresh the cache manually afterwards."
-    fi
-  fi
-}
-
-pull () {
+pull() {
   if ! command -v git >/dev/null 2>&1; then
     die "Git is not installed. Please install it."
   fi
@@ -224,29 +61,15 @@ pull () {
   ok "Updated to version: $VERSION."
 }
 
-install() {
-  ensure_yay
-  cleaner
-  install_packages
-  default_apps
-  settings_cosmic
-  set_gsettings
-  copy_configs
-  symlinks
-  copy_fonts
-  install_term_options
-  settings
-}
-
 case "$1" in
 --install)
-  install
-  copyright
+  distro=$(select_distro)
+  exec sh "$SCRIPT_DIR/$distro/main.sh" --install
   ;;
 --upgrade)
   pull
-  install
-  copyright
+  distro=$(select_distro)
+  exec sh "$SCRIPT_DIR/$distro/main.sh" --install
   ;;
 --help)
   help
