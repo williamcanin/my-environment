@@ -55,17 +55,17 @@ power_menu() {
   [ -n "$DIR" ] || require_session
   # shellcheck disable=SC1091
   # shellcheck disable=SC1090
-  . "$HOME/.config/$DIR/scripts/power-menu.sh"
+  . "$(paths_config "$DIR/scripts/power-menu.sh")"
 }
 
 term() {
   require_session
   case "$XDG_SESSION_DESKTOP" in
   Hyprland)
-    "$KITTY" -e btm -C "$HOME/.config/bottom/$1.toml" && hyprctl dispatch "hl.dsp.focus({ workspace = $CURRENT_WS })"
+    "$KITTY" -e btm -C "$(paths_config "bottom/$1.toml")" && hyprctl dispatch "hl.dsp.focus({ workspace = $CURRENT_WS })"
     ;;
   sway)
-    "$KITTY" -e btm -C "$HOME/.config/bottom/$1.toml"
+    "$KITTY" -e btm -C "$(paths_config "bottom/$1.toml")"
     ;;
   esac
 }

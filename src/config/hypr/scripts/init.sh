@@ -40,7 +40,7 @@ run_waybars() {
   sleep 0.5
 
   # INFO System
-  waybar -c ~/.config/waybar/sysinfo.jsonc -s ~/.config/waybar/sysinfo.css &
+  waybar -c "$(paths_config "waybar/sysinfo.jsonc")" -s "$(paths_config "waybar/sysinfo.css")" &
   sleep 1
 
   # Status Bar Top

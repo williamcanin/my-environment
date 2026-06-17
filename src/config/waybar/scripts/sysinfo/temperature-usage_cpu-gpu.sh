@@ -3,7 +3,7 @@
 # shellcheck disable=SC1091
 . "$HOME/.config/.environment-bootstrap"
 
-GPU_SCRIPT="$HOME/.config/waybar/scripts/sysinfo/gpu.sh"
+GPU_SCRIPT="$(paths_config "waybar/scripts/sysinfo/gpu.sh")"
 
 cpu_temp() {
   # Prioritizes known CPU sensors
