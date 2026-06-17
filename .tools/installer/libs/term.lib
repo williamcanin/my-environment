@@ -1,6 +1,9 @@
+# shellcheck shell=sh disable=SC2016
+
 add_term_options() {
-  local rc_file="$1"
-  local source_line='. "$HOME/.config/term/options.sh"'
+  rc_file="$1"
+
+  source_line='. "$HOME/.config/term/options.sh"'
 
   [ -f "$rc_file" ] || touch "$rc_file"
 

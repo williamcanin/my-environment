@@ -1,42 +1,50 @@
 #!/usr/bin/env sh
 
+# shellcheck disable=SC1091,SC2086
+
 set -e
 
-# shellcheck disable=SC1091
-. "tools/installer/libs/version.lib"
-# shellcheck disable=SC1091
-. "tools/installer/libs/msg.lib"
-# shellcheck disable=SC1091
-. "tools/installer/libs/help.lib"
-# shellcheck disable=SC1091
-. "tools/installer/libs/symlink.lib"
-# shellcheck disable=SC1091
-. "tools/installer/libs/term.lib"
-# shellcheck disable=SC1091
-. "tools/installer/libs/copyright.lib"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+. "$SCRIPT_DIR/libs/base.lib"
+. "$SCRIPT_DIR/libs/version.lib"
+. "$SCRIPT_DIR/libs/msg.lib"
+. "$SCRIPT_DIR/libs/help.lib"
+. "$SCRIPT_DIR/libs/symlink.lib"
+. "$SCRIPT_DIR/libs/term.lib"
+. "$SCRIPT_DIR/libs/cosmic.lib"
+. "$SCRIPT_DIR/libs/copyright.lib"
+
+
 CONFIG_SRC="$REPO_ROOT/src/config"
 CONFIG_DST="$HOME/.config"
 FONTS_SRC="$REPO_ROOT/src/fonts"
 FONTS_DST="$HOME/.local/share/fonts"
-BASE_DEPS="git base-devel go gcc"
+BASE_DEPS="git base-devel go gcc lua wayland wayland-protocols"
 PACKAGES="
-  firefox hyprland hyprpaper hypridle hyprshutdown hyprlock hyprshot hyprlua-git
-  lua rofi-wayland kitty wev playerctl brightnessctl moreutils wtype fastfetch
-  flameshot grim cliphist wl-clipboard slurp swappy foot
-  xdg-desktop-portal xdg-desktop-portal-wlr smog-bin xarchiver file-roller zip
-  unzip zathura terminus-font nautilus terminus-font-ttf mpv magick pwvucontrol
-  mako jq rofimoji rofi-calc bottom btop satty gsimplecal calcurse hyprpicker
+  firefox hyprland hyprland-qt-support hyprpaper hypridle hyprshutdown hyprlock
+  hyprshot rofi-wayland kitty wev playerctl brightnessctl moreutils quickshell-git
+  flameshot grim cliphist wl-clipboard slurp zsh gpu-screen-recorder wf-recorder
+  xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk mpv
+  xdg-desktop-portal-wlr unzip zathura terminus-font nautilus imagemagick
+  dunst jq rofimoji rofi-calc bottom btop satty gsimplecal calcurse hyprpicker
   kooha xdg-utils gtk3 gtk4 adwaita-icon-theme noto-fonts noto-fonts-emoji uwsm
   ttf-nerd-fonts-symbols-mono ttf-jetbrains-mono-nerd otf-font-awesome vivid
-  libnotify pamixer wireplumber networkmanager zsh papirus-icon-theme wf-recorder
-  gpu-screen-recorder
+  libnotify pamixer wireplumber networkmanager swappy foot snappy-switcher
+  smog-bin xarchiver zip just libqalculate fontconfig qt5-quickcontrols2
+  kvantum nwg-look qt5ct qt6ct qt6-declarative qt6-tools cosmic-files
+  cosmic-settings file-roller pwvucontrol wtype fastfetch polkit-gnome bluez
+  bluez-utils blueman imv
 "
+
+settings() {
+  echo "open" > "$WAYBAR_CACHE_DIR/sidebar-state"
+}
 
 install_yay () {
   log "yay not found — installing dependencies..." "\n"
-  # shellcheck disable=SC2086
+
   sudo pacman -S --needed --noconfirm $BASE_DEPS || die "Failed to install yay dependencies."
 
   tmp="$(mktemp -d)"
@@ -61,28 +69,55 @@ ensure_yay () {
 
 default_apps() {
   # Browser
-  xdg-settings set default-web-browser firefox.desktop
-  ok "Default browser applied to: Firefox."
+  if command -v xdg-settings >/dev/null 2>&1; then
+    if xdg-settings set default-web-browser firefox.desktop; then
+      ok "Default browser applied to: Firefox."
+    else
+      warn "Could not set Firefox as default browser."
+    fi
+  else
+    warn "xdg-settings not found — default browser not changed."
+  fi
 }
 
-set_theme() {
-  # GTK Theme
+set_gsettings () {
   if command -v gsettings >/dev/null 2>&1; then
-    gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-    ok "GTK theme applied."
+
+    # GTK Theme
+    if command -v gsettings >/dev/null 2>&1; then
+      if
+        gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME" &&
+        gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME" &&
+        gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &&
+        gsettings set org.gnome.desktop.interface cursor-theme "$GTK_CURSOR"
+      then
+        ok "GTK theme applied."
+      else
+        warn "Could not apply GTK theme."
+      fi
+    else
+      warn "gsettings not found — GTK theme not changed."
+    fi
+
+    # Disabled buttons: minimize,maximize,close.
+    if
+      gsettings set org.gnome.desktop.wm.preferences button-layout "$BUTTON_LAYOUT"
+    then
+        ok "Disabled buttons 'minimize,maximize,close' in window"
+    fi
   fi
+}
+
+cleaner() {
+  # Removed build on "gvfs-metadata". This prevents certain compilation errors.
+  rm -rf "$HOME"/.local/share/gvfs-metadata/
 }
 
 install_packages () {
   log "Installing necessary packages..." "\n"
-  # shellcheck disable=SC2086
+
   yay -S --needed --noconfirm $PACKAGES || die "Failed to install required packages."
   ok "All packages installed."
-
-  default_apps
-  set_theme
 }
 
 copy_configs() {
@@ -92,7 +127,7 @@ copy_configs() {
   mkdir -p "$CONFIG_DST"
 
   # Permissions .sh
-  find src/config -type f -name "*.sh" -exec chmod +x {} \;
+  find "$CONFIG_SRC" -type f -name "*.sh" -exec chmod +x {} \;
 
   for src_dir in "$CONFIG_SRC"/*/; do
     [ -d "$src_dir" ] || continue
@@ -184,11 +219,16 @@ pull () {
 
 install() {
   ensure_yay
+  cleaner
   install_packages
+  default_apps
+  settings_cosmic
+  set_gsettings
   copy_configs
   symlinks
   copy_fonts
   install_term_options
+  settings
 }
 
 case "$1" in
@@ -211,6 +251,11 @@ case "$1" in
   ;;
 --version)
   plain "Version: $VERSION" "\n"
+  ;;
+*)
+  help
+  copyright
+  exit 1
   ;;
 esac
 exit 0
