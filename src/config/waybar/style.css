@@ -184,7 +184,7 @@ tooltip label {
   margin-left: 15px;
 }
 
-#right-0, #right-1, #right-2 {
+#right-0, #right-1, #right-2, #mpris {
   margin: 3px 0px;
   margin-left: 5px;
   padding: 0px 10px;
@@ -256,7 +256,11 @@ tooltip label {
 }
 
 #mpris {
-  color: @foreground;
+  background: rgba(15, 24, 23, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, .35);
+  box-shadow: none;
+  text-shadow: none;
   animation: repeat;
   animation-name: blink-player;
   animation-duration: 3s;
@@ -267,16 +271,18 @@ tooltip label {
 
 #mpris:hover {
   border-bottom: 1px solid @foreground;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 @keyframes blink-player {
   to {
-    color: #d4d4d4;
+    color: #1ed760;
   }
 }
 
 #custom-power {
-  color: #f89a9a;
+  color: #c76469;
 }
 
 /* Recording Screen */

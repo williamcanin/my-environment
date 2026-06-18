@@ -39,8 +39,8 @@
     "orientation": "inherit",
     "modules": [
       "custom/recording",
-      "pulseaudio#output",
-      "pulseaudio#input"
+      "pulseaudio#input",
+      "pulseaudio#output"
     ]
   },
   "modules-left": ["group/left1", "group/left2"],
