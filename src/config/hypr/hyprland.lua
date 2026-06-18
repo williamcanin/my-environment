@@ -283,7 +283,7 @@ hl.bind(mod .. " + Space", hl.dsp.exec_cmd("nautilus"))
 hl.bind(mod .. " + comma", hl.dsp.exec_cmd("qs -c sidebar-right ipc call sidebar toggle"))
 
 -- Wallpaper Picker ----------------------------------------------------------------------------------------------------
-hl.bind(mod .. " + SHIFT + W", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/wallpaper-pick.sh"))
+hl.bind(mod .. " + Y", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/wallpaper-pick.sh"))
 
 -- Finder --------------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + D", hl.dsp.exec_cmd('rofi -show drun -display-drun "drun"'))
