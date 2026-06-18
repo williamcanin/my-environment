@@ -84,6 +84,7 @@ element alternate.normal {
 element selected.normal {
   background-color: @row-selected;
   text-color: @fg-selected;
+  border-radius: 5px;
 }
 
 element-text {

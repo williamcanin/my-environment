@@ -1,4 +1,4 @@
-@theme "~/.config/rofi/themes/blasphemous-echoes-of-salt.rasi"
+@theme "~/.config/rofi/themes/blasphemous-echoes-of-salt-colored.rasi"
 
 configuration {
     font: "JetBrainsMono Nerd Font 12";
