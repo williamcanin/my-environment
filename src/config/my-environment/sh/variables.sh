@@ -16,7 +16,7 @@ GTK_CURSOR="Adwaita"
 
 # -- Application paths --------------------------------------------------------
 FINDER="/usr/bin/rofi"
-KITTY="/usr/bin/kitty"
+TERM="/usr/bin/kitty"
 
 # -- UI defaults --------------------------------------------------------------
 BAR_SIZE="8"

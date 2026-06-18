@@ -62,10 +62,10 @@ term() {
   require_session
   case "$XDG_SESSION_DESKTOP" in
   Hyprland)
-    "$KITTY" -e btm -C "$(paths_config "bottom/$1.toml")" && hyprctl dispatch "hl.dsp.focus({ workspace = $CURRENT_WS })"
+    "$TERM" -e btm -C "$(paths_config "bottom/$1.toml")" && hyprctl dispatch "hl.dsp.focus({ workspace = $CURRENT_WS })"
     ;;
   sway)
-    "$KITTY" -e btm -C "$(paths_config "bottom/$1.toml")"
+    "$TERM" -e btm -C "$(paths_config "bottom/$1.toml")"
     ;;
   esac
 }
@@ -93,7 +93,7 @@ case $1 in
 
     ## Calcurse
     # sudo pacman -S calcurse kitty
-    "$KITTY" --class calcurse-popup -e calcurse
+    "$TERM" --class calcurse-popup -e calcurse
     go_workspace "$CURRENT_WS"
     ;;
   --mem)

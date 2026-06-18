@@ -5,7 +5,7 @@
 WALLPAPERS_DIR="${HOME}/.config/hypr/wallpapers"
 SELECTED_FILE=$(mktemp)
 
-yazi --chooser-file="$SELECTED_FILE" "$WALLPAPERS_DIR"
+"$TERM" -e yazi --chooser-file="$SELECTED_FILE" "$WALLPAPERS_DIR"
 
 SELECTED_PATH=$(cat "$SELECTED_FILE")
 rm -f "$SELECTED_FILE"

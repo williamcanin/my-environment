@@ -12,7 +12,7 @@ target=$1
 [ -z "$target" ] && exit 1
 
 if [ -d "$target" ]; then
-    "$KITTY" -e "$YAZI" "$target" >/dev/null 2>&1 &
+    "$TERM" -e "$YAZI" "$target" >/dev/null 2>&1 &
     exit 0
 fi
 
@@ -25,7 +25,7 @@ case "$mime" in
     application/toml|\
     application/x-yaml|\
     application/x-shellscript)
-        "$KITTY" -e "$EDITOR" "$target" >/dev/null 2>&1 &
+        "$TERM" -e "$EDITOR" "$target" >/dev/null 2>&1 &
         ;;
     application/pdf)
         "$ZATHURA" "$target" >/dev/null 2>&1 &
