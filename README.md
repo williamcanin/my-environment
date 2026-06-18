@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 -->
+
 # My Environment
 
 [![GitHub Release](https://img.shields.io/github/v/release/williamcanin/my-environment?style=flat&color=3aa99f&label=Release)](https://github.com/williamcanin/my-environment/releases)
@@ -116,7 +118,7 @@ git clone --depth=1 https://github.com/williamcanin/my-environment.git && cd my-
 
 O instalador pergunta qual distribuição usar:
 
-```
+```sh
 → Select your distribution:
   [1] Arch Linux
   [2] Fedora
