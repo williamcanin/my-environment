@@ -1,5 +1,8 @@
-/* theme: blasphemous-fragment-of-guilt */
-@define-color th-background  #f7f1d1;
-@define-color th-header      #181818;
-@define-color th-foreground  #0a0a07;
-@define-color th-window-bg   rgba(24, 24, 24, 0.15);
+/* theme: blasphemous-fragment-of-guilt — sysinfo panel */
+@define-color th-background    #eef7f4;
+@define-color th-header        #2d4a45;
+@define-color th-foreground    #24302e;
+@define-color th-window-bg     rgba(238, 247, 244, 0.77);
+@define-color th-border        rgba(36, 48, 46, 0.18);
+@define-color th-border-header rgba(36, 48, 46, 0.12);
+@define-color th-disconnected rgba(36, 48, 46, 0.35);

@@ -1,5 +1,8 @@
-/* theme: blasphemous-kneeling-stone */
-@define-color th-background  #1e1e2e;
-@define-color th-header      #cba6f7;
-@define-color th-foreground  #bac2de;
-@define-color th-window-bg   rgba(49, 50, 68, 0.45);
+/* theme: blasphemous-kneeling-stone — sysinfo panel */
+@define-color th-background    #1e1e2e;
+@define-color th-header        #cba6f7;
+@define-color th-foreground    #bac2de;
+@define-color th-window-bg     rgba(49, 50, 68, 0.45);
+@define-color th-border        rgba(255, 255, 255, 0.06);
+@define-color th-border-header rgba(255, 255, 255, 0.06);
+@define-color th-disconnected rgba(255, 255, 255, 0.35);

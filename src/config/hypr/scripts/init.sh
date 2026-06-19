@@ -85,11 +85,11 @@ case "$1" in
     systemctl --user restart --now dunst
 
     # PolicyKit agent (graphical auth)
-    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+    # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
     # Bluetooth
-    systemctl enable --now bluetooth >/dev/null 2>&1 &
-    blueman-applet &
+    #systemctl enable --now bluetooth >/dev/null 2>&1 &
+    #blueman-applet &
   ;;
   *)
     notify-send "Error" "[hyprland:scripts:init]: Invalid parameter"

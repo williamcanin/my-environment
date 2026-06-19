@@ -1,5 +1,8 @@
-/* theme: blasphemous-mea-culpa */
-@define-color th-background  #110f0d;
-@define-color th-header      #8fc7c7;
-@define-color th-foreground  #e7eeed;
-@define-color th-window-bg   rgba(65, 55, 48, 0.20);
+/* theme: blasphemous-mea-culpa — sysinfo panel */
+@define-color th-background    #110f0d;
+@define-color th-header        #8fc7c7;
+@define-color th-foreground    #e7eeed;
+@define-color th-window-bg     rgba(65, 55, 48, 0.20);
+@define-color th-border        rgba(255, 255, 255, 0.06);
+@define-color th-border-header rgba(255, 255, 255, 0.06);
+@define-color th-disconnected rgba(255, 255, 255, 0.35);

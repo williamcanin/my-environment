@@ -1,4 +1,4 @@
-@import url("./themes/blasphemous-fragment-of-guilt/theme.css");
+@import url("./themes/blasphemous-mea-culpa/theme.css");
 
 /*  Waybar — Top Painel  */
 
@@ -15,7 +15,6 @@ window#waybar {
   min-height: 0px;
   border-radius: 4px;
   border: 1px solid @th-decorate;
-  /*background: alpha(@th-background, 0.88);*/
   background: @th-background-rgba;
   transition-property: background-color;
   transition-duration: .5s;
@@ -39,9 +38,8 @@ window#waybar.empty #window {
 #workspaces button {
   background: none;
   box-shadow: none;
-  /*text-shadow: 0 1px 1px alpha(@th-foreground, 0.50);*/
   text-shadow: none;
-  color: @th-foreground2;
+  color: @th-foreground;
   border: none;
   font-weight: bold;
   border-radius: 5px;
@@ -55,14 +53,14 @@ window#waybar.empty #window {
 #workspaces button.focused:hover,
 #workspaces button.empty {
   text-shadow: none;
-  background: @th-foreground2;
+  background: @th-decorate;
   box-shadow: none;
   border: none;
   border-radius: 4px;
   margin: 4px 1px 4px 1px;
   padding: 0px 4px;
-  color: @th-foreground;
-  opacity: 0.70;
+  color: @th-background;
+  opacity: 0.85;
 }
 
 
@@ -82,11 +80,11 @@ window#waybar.empty #window {
 }
 
 #custom-icon-window {
-  color: @th-foreground2;
+  color: @th-foreground;
 }
 
 #submap {
-  color: @th-foreground2;
+  color: @th-foreground;
   font-weight: bold;
 }
 
@@ -122,6 +120,10 @@ tooltip label {
 
 #mpris {
   color: @th-foreground;
+}
+
+#window {
+  color: @th-window-fg;
 }
 
 #tray,
@@ -215,12 +217,12 @@ tooltip label {
 #pulseaudio:hover,
 #custom-settings:hover,
 #custom-power:hover {
-  color: @th-foreground;
-  border-bottom: 1px solid @th-foreground;
+  color: @th-foreground2;
+  border-bottom: 1px solid @th-decorate;
 }
 
 #custom-settings {
-  color: @th-foreground2;
+  color: @th-foreground;
   padding: 0 6px;
 }
 
@@ -255,9 +257,9 @@ tooltip label {
 }
 
 #mpris {
-  background: rgba(15, 24, 23, 1);
-  color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(255, 255, 255, .35);
+  background: @th-mpris-bg;
+  color: @th-foreground;
+  border: 1px solid @th-mpris-border;
   box-shadow: none;
   text-shadow: none;
   animation: repeat;
@@ -269,24 +271,24 @@ tooltip label {
 }
 
 #mpris:hover {
-  border-bottom: 1px solid @th-foreground;
+  border-bottom: 1px solid @th-decorate;
   box-shadow: none;
   text-shadow: none;
 }
 
 @keyframes blink-player {
   to {
-    color: #1ed760;
+    color: @th-mpris-fg-anim;
   }
 }
 
 #custom-power {
-  color: #c76469;
+  color: @th-power;
 }
 
 /* Recording Screen */
 #custom-recording {
-  color: #fefeff;
+  color: @th-foreground;
 }
 
 #custom-recording.stopped {
@@ -294,12 +296,12 @@ tooltip label {
 }
 
 #custom-recording.recording {
-  color: #f38ba8;
+  color: @th-recording;
   animation: blink-recording 1.2s ease-in-out infinite;
 }
 
 #custom-recording.paused {
-  color: #f9e2af;
+  color: @th-recording-pause;
 }
 
 /* Specific animation Module */

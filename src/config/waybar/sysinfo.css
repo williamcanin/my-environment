@@ -1,4 +1,4 @@
-@import url("./themes/blasphemous-fragment-of-guilt/sysinfo-theme.css");
+@import url("./themes/blasphemous-mea-culpa/sysinfo-theme.css");
 
 /*  Waybar — Painel vertical (Sysinfo)  */
 
@@ -17,8 +17,7 @@ window#waybar {
   min-width: 380px;
   color: @th-foreground;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255, 0.06);
-  /* Default background color: rgba(15, 58, 51, 0.06); */
+  border: 1px solid @th-border;
   background: @th-window-bg;
 }
 
@@ -56,7 +55,7 @@ window#waybar {
     font-size: 14px;
     font-weight: bold;
     padding: 10px 16px 2px 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid @th-border-header;
     margin-top: 4px;
 }
 
@@ -83,7 +82,7 @@ window#waybar {
 }
 
 #network.disconnected {
-  color: rgba(255, 255, 255, 0.35);
+  color: @th-disconnected;
 }
 
 @keyframes blink {

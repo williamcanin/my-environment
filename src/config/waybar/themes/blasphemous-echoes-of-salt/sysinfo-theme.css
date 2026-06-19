@@ -1,5 +1,8 @@
-/* theme: blasphemous-echoes-of-salt */
-@define-color th-background  #181818;
-@define-color th-header      #3aa99f;
-@define-color th-foreground  #c6b7c1;
-@define-color th-window-bg   rgba(112, 34, 119, 0.06);
+/* theme: blasphemous-echoes-of-salt — sysinfo panel */
+@define-color th-background    #181818;
+@define-color th-header        #3aa99f;
+@define-color th-foreground    #c6b7c1;
+@define-color th-window-bg     rgba(112, 34, 119, 0.06);
+@define-color th-border        rgba(255, 255, 255, 0.06);
+@define-color th-border-header rgba(255, 255, 255, 0.06);
+@define-color th-disconnected rgba(255, 255, 255, 0.35);

@@ -1,11 +1,33 @@
 /* theme: blasphemous-fragment-of-guilt */
-@define-color th-foreground      #0a0a07;
-@define-color th-foreground2     #ffffff;
-@define-color th-decorate        #ffffff;
-@define-color th-decorate-rgba   rgba(255, 255, 255, 1);
-@define-color th-hover           #181818;
-@define-color th-background      #f7f1d1;
-@define-color th-background-rgba rgba(37, 37, 37, 0.47);
-@define-color th-right1-bg       rgba(255, 255, 255, 1);
-@define-color th-right02-bg      rgba(255, 255, 255, 1);
-@define-color th-border-rights   rgba(0, 0, 0, 1);
+
+/* ── Palette ──────────────────────────────────────────────────────────────── */
+/* bg:        #eef7f4  — mint cream (painel principal)                         */
+/* fg:        #24302e  — verde escuro quase preto (texto principal)            */
+/* fg-dark:   #0a0a07  — quase preto (texto enfático)                          */
+/* accent:    #3a6b63  — verde médio (decoração, hover)                        */
+/* card:      #f7fbf9  — quase branco esverdeado (cards direita)               */
+/* border:    rgba(36,48,46, 0.35)  — borda neutra escura translúcida          */
+/* ──────────────────────────────────────────────────────────────────────────── */
+
+@define-color th-foreground      #24302e;
+@define-color th-foreground2     #0a0a07;
+@define-color th-decorate        #3a6b63;
+@define-color th-decorate-rgba   rgba(58, 107, 99, 0.45);
+@define-color th-hover           #3a6b63;
+@define-color th-background      #eef7f4;
+@define-color th-background-rgba rgba(238, 247, 244, 0.88);
+@define-color th-right1-bg       rgba(215, 235, 230, 0.80);
+@define-color th-right02-bg      rgba(247, 251, 249, 0.90);
+@define-color th-border-rights   rgba(36, 48, 46, 0.35);
+@define-color th-window-fg       #24302e;
+
+/* Status */
+@define-color th-danger          #b45a52;
+@define-color th-warn            #9b7d35;
+@define-color th-ok              #3a6b63;
+@define-color th-recording       #b45a52;
+@define-color th-recording-pause #9b7d35;
+@define-color th-power           #b45a52;
+@define-color th-mpris-bg        rgba(238, 247, 244, 0.95);
+@define-color th-mpris-border    rgba(36, 48, 46, 0.25);
+@define-color th-mpris-fg-anim   #3a6b63;
