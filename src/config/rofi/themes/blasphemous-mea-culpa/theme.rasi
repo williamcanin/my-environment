@@ -1,0 +1,10 @@
+/* theme: blasphemous-mea-culpa */
+* {
+    th-bg:            rgba(17, 15, 13, 86%);
+    th-fg:            rgb(143, 199, 199);
+    th-fg-selected:   rgba(231, 238, 237, 100%);
+    th-row-alt:       rgba(143, 199, 199, 7%);
+    th-row-selected:  rgba(65, 55, 48, 0.88);
+    th-border-color:  rgba(143, 199, 199, 0.36);
+    th-separator:     rgba(183, 131, 85, 0.62);
+}

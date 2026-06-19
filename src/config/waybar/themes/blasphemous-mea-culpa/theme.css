@@ -1,0 +1,9 @@
+/* theme: blasphemous-mea-culpa */
+@define-color th-foreground      #e7eeed;
+@define-color th-decorate        #8fc7c7;
+@define-color th-decorate-rgba   rgba(143, 199, 199, 0.42);
+@define-color th-hover           #bfcdcc;
+@define-color th-background      #110f0d;
+@define-color th-background-rgba rgba(17, 15, 13, 0.78);
+@define-color th-right1-bg       rgba(65, 55, 48, 0.52);
+@define-color th-right02-bg      rgba(143, 199, 199, 0.13);

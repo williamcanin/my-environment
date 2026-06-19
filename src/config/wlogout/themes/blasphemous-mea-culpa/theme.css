@@ -1,0 +1,6 @@
+/* theme: blasphemous-mea-culpa */
+@define-color th-window-bg    rgba(18, 18, 18, 0.85);
+@define-color th-button-bg    #241d19;
+@define-color th-button-fg    #e7eeed;
+@define-color th-accent       #8fc7c7;
+@define-color th-accent-text  #110f0d;

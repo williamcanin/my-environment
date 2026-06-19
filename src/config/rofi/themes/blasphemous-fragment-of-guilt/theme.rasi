@@ -1,0 +1,10 @@
+/* theme: blasphemous-fragment-of-guilt */
+* {
+    th-bg:            rgba(238, 247, 244, 88%);
+    th-fg:            rgb(36, 48, 46);
+    th-fg-selected:   rgba(247, 251, 249, 100%);
+    th-row-alt:       rgba(90, 165, 157, 10%);
+    th-row-selected:  rgba(90, 165, 157, 0.82);
+    th-border-color:  rgba(90, 165, 157, 0.42);
+    th-separator:     rgba(151, 199, 191, 0.90);
+}
