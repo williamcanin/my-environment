@@ -1,3 +1,5 @@
+@import url("./themes/hyprland-dark-teal/theme.css");
+
 * {
   background-image: none;
   font-family: "JetBrainsMonoNL Nerd Font", "Font Awesome 6 Free Solid", "Font Awesome 6 Free", sans-serif;
@@ -5,14 +7,14 @@
 }
 
 window {
-  background-color: rgba(18, 18, 18, 0.85);
+  background-color: @th-window-bg;
   border-radius: 10px;
 }
 
 button {
-  background-color: #242424;
-  color: #cdd6f4;
-  border: 2px solid #3aa99f;
+  background-color: @th-button-bg;
+  color: @th-button-fg;
+  border: 2px solid @th-accent;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 900;
@@ -25,8 +27,8 @@ button {
 button:focus,
 button:active,
 button:hover {
-  background-color: #3aa99f;
-  color: #1e1e2e;
-  border-color: #3aa99f;
+  background-color: @th-accent;
+  color: @th-accent-text;
+  border-color: @th-accent;
   outline-style: none;
 }
