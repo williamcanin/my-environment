@@ -41,6 +41,7 @@ window#waybar.empty #window {
   box-shadow: none;
   /*text-shadow: 0 1px 1px alpha(@th-foreground, 0.50);*/
   text-shadow: none;
+  color: @th-foreground2;
   border: none;
   font-weight: bold;
   border-radius: 5px;
@@ -54,13 +55,13 @@ window#waybar.empty #window {
 #workspaces button.focused:hover,
 #workspaces button.empty {
   text-shadow: none;
-  background: @th-foreground;
+  background: @th-foreground2;
   box-shadow: none;
   border: none;
   border-radius: 4px;
   margin: 4px 1px 4px 1px;
   padding: 0px 4px;
-  color: @th-background;
+  color: @th-foreground;
   opacity: 0.70;
 }
 
@@ -80,7 +81,12 @@ window#waybar.empty #window {
   color: @th-foreground;
 }
 
+#custom-icon-window {
+  color: @th-foreground2;
+}
+
 #submap {
+  color: @th-foreground2;
   font-weight: bold;
 }
 
@@ -178,19 +184,22 @@ tooltip label {
   margin-left: 5px;
   padding: 0px 10px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, .35);
+  border: 1px solid @th-border-rights;
 }
 
 #right-0 {
   background: @th-right02-bg;
+  color: @th-foreground;
 }
 
 #right-1 {
   background: @th-right1-bg;
+  color: @th-foreground;
 }
 
 #right-2 {
   background: @th-right02-bg;
+  color: @th-foreground;
 }
 
 /* --- Hover --- */
@@ -211,6 +220,7 @@ tooltip label {
 }
 
 #custom-settings {
+  color: @th-foreground2;
   padding: 0 6px;
 }
 
@@ -280,7 +290,7 @@ tooltip label {
 }
 
 #custom-recording.stopped {
-  color: #fefeff;
+  color: @th-foreground;
 }
 
 #custom-recording.recording {

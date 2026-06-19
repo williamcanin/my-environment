@@ -62,7 +62,7 @@
     "tooltip": false
   },
   "hyprland/submap": {
-    "format": "[ <span color='#3aa99f'>{}</span> ] ",
+    "format": "[ {} ] ",
     "max-length": 20,
     "tooltip": false
   },

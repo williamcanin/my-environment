@@ -1,5 +1,6 @@
 /* theme: blasphemous-echoes-of-salt */
 @define-color th-foreground      #ffffff;
+@define-color th-foreground2     #181818;
 @define-color th-decorate        #3aa99f;
 @define-color th-decorate-rgba   rgba(58, 169, 159, 0.45);
 @define-color th-hover           #86e0d9;
@@ -7,3 +8,4 @@
 @define-color th-background-rgba rgba(24, 24, 24, 0.7);
 @define-color th-right1-bg       rgba(68, 23, 67, 0.37);
 @define-color th-right02-bg      rgba(58, 169, 159, 0.12);
+@define-color th-border-rights   rgba(255, 255, 255, .35);
