@@ -22,4 +22,4 @@ TERM="/usr/bin/kitty"
 BAR_SIZE="8"
 
 # -- Active theme -------------------------------------------------------------
-ACTIVE_THEME="hyprland-dark-teal"
+ACTIVE_THEME="blasphemous-echoes-of-salt"

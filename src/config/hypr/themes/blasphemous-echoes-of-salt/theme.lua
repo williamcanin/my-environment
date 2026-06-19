@@ -1,4 +1,4 @@
--- Theme: hyprland-dark-teal
+-- Theme: blasphemous-echoes-of-salt
 -- Loaded by hyprland.lua via dofile()
 return {
   -- Borders
