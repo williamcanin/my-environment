@@ -4,6 +4,18 @@
 --  By: William C. Canin
 -- ===================================
 
+-- Theme loader --------------------------------------------------------------------------------------------------------
+local _theme_file = io.open(os.getenv("HOME") .. "/.config/my-environment/.active-theme")
+local _theme_name = "hyprland-dark-teal"
+if _theme_file then
+  local _line = _theme_file:read("*l")
+  if _line and _line ~= "" then _theme_name = _line end
+  _theme_file:close()
+end
+local theme = dofile(os.getenv("HOME") ..
+  "/.config/hypr/themes/" .. _theme_name .. "/theme.lua")
+-- End theme loader ----------------------------------------------------------------------------------------------------
+
 -- Monitor -------------------------------------------------------------------------------------------------------------
 hl.monitor({
   output = "HDMI-A-1", -- "" = any monitor
@@ -34,13 +46,13 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 -- Global configuration ------------------------------------------------------------------------------------------------
 hl.config({
   general = {
-    gaps_in = 3,
-    gaps_out = 17,
-    border_size = 1,
+    gaps_in = theme.gaps_in,
+    gaps_out = theme.gaps_out,
+    border_size = theme.border_size,
 
     col = {
-      active_border = "rgba(3aa99fff)",
-      inactive_border = "rgba(303030ff)",
+      active_border = theme.border_active,
+      inactive_border = theme.border_inactive,
     },
     layout = "dwindle",
     allow_tearing = false,
@@ -49,10 +61,10 @@ hl.config({
   group = {
     merge_groups_on_drag = true,
     col = {
-      border_active = "rgba(3aa99fff)",
-      border_inactive = "rgba(303030ff)",
-      border_locked_active = "rgba(3aa99fff)",
-      border_locked_inactive = "rgba(303030ff)",
+      border_active = theme.border_active,
+      border_inactive = theme.border_inactive,
+      border_locked_active = theme.border_active,
+      border_locked_inactive = theme.border_inactive,
     },
 
     groupbar = {
@@ -61,10 +73,10 @@ hl.config({
       render_titles = false,
       text_color = "rgba(ffffffff)",
       col = {
-        active = "rgba(3aa99fff)",
-        inactive = "rgba(303030cc)",
-        locked_active = "rgba(3aa99fff)",
-        locked_inactive = "rgba(303030cc)",
+        active = theme.groupbar_active,
+        inactive = theme.groupbar_inactive,
+        locked_active = theme.groupbar_active,
+        locked_inactive = theme.groupbar_inactive,
       },
     },
   },
@@ -72,8 +84,8 @@ hl.config({
   decoration = {
     active_opacity = 1.0,
     inactive_opacity = 1.0,
-    rounding = 8,
-    rounding_power = 2,
+    rounding = theme.rounding,
+    rounding_power = theme.rounding_power,
     fullscreen_opacity = 1.0,
     dim_inactive = false,
     dim_strength = 0.08,
@@ -82,8 +94,8 @@ hl.config({
       enabled = true,
       range = 6,
       render_power = 2,
-      color = 0xcc1a1a2e,
-      color_inactive = 0x661a1a2e,
+      color = theme.shadow_color,
+      color_inactive = theme.shadow_color_inactive,
     },
 
     blur = {
@@ -284,6 +296,11 @@ hl.bind(mod .. " + comma", hl.dsp.exec_cmd("qs -c sidebar-right ipc call sidebar
 
 -- Wallpaper Picker ----------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + Y", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/wallpaper-pick.sh"))
+
+-- Theme switcher ------------------------------------------------------------------------------------------------------
+hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd(
+  "ls ~/.config/hypr/themes | rofi -dmenu -p 'Theme' | xargs -I{} ~/.config/my-environment/sh/theme-switch.sh {}"
+))
 
 -- Finder --------------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + D", hl.dsp.exec_cmd('rofi -show drun -display-drun "drun"'))
