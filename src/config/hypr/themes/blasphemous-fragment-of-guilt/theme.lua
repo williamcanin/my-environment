@@ -2,10 +2,10 @@
 -- Loaded by hyprland.lua via dofile()
 return {
   -- Borders
-  border_active          = "rgba(5aa59dff)",
+  border_active          = "rgba(181818ff)",
   border_inactive        = "rgba(cadbd6ff)",
   -- Group bar
-  groupbar_active        = "rgba(5aa59dff)",
+  groupbar_active        = "rgba(181818ff)",
   groupbar_inactive      = "rgba(cadbd6cc)",
   -- Shadow
   shadow_color           = 0x665a6f6a,
