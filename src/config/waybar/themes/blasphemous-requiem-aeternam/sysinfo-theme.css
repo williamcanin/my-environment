@@ -1,0 +1,8 @@
+/* theme: blasphemous-requiem-aeternam — sysinfo panel */
+@define-color th-background    #000000;
+@define-color th-header        #ba8540;
+@define-color th-foreground    #c8a060;
+@define-color th-window-bg     rgba(186, 133, 64, 0.04);
+@define-color th-border        rgba(186, 133, 64, 0.08);
+@define-color th-border-header rgba(186, 133, 64, 0.06);
+@define-color th-disconnected  rgba(186, 133, 64, 0.30);

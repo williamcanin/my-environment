@@ -1,0 +1,10 @@
+/* theme: blasphemous-requiem-aeternam */
+* {
+    th-bg:            rgba(0, 0, 0, 94%);
+    th-fg:            rgb(186, 133, 64);
+    th-fg-selected:   rgba(186, 133, 64, 100%);
+    th-row-alt:       rgba(186, 133, 64, 4%);
+    th-row-selected:  rgba(20, 15, 10, 0.90);
+    th-border-color:  rgba(186, 133, 64, 0.35);
+    th-separator:     rgba(186, 133, 64, 0.15);
+}

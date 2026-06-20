@@ -1,0 +1,22 @@
+/* theme: blasphemous-requiem-aeternam */
+@define-color th-foreground      #ba8540;
+@define-color th-foreground2     #ba8540;
+@define-color th-decorate        #ba8540;
+@define-color th-decorate-rgba   rgba(186, 133, 64, 0.45);
+@define-color th-hover           #d49e52;
+@define-color th-background      #000000;
+@define-color th-background-rgba rgba(0, 0, 0, 0.88);
+@define-color th-right1-bg       rgba(186, 133, 64, 0.06);
+@define-color th-right02-bg      rgba(186, 133, 64, 0.03);
+@define-color th-border-rights   rgba(186, 133, 64, 0.25);
+@define-color th-window-fg       #ba8540;
+
+@define-color th-danger          #ba8540;
+@define-color th-warn            #ba8540;
+@define-color th-ok              #ba8540;
+@define-color th-recording       #ba8540;
+@define-color th-recording-pause #ba8540;
+@define-color th-power           #ba8540;
+@define-color th-mpris-bg        rgba(0, 0, 0, 0.60);
+@define-color th-mpris-border    rgba(186, 133, 64, 0.30);
+@define-color th-mpris-fg-anim   #ba8540;

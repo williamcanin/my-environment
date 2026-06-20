@@ -1,0 +1,6 @@
+/* theme: blasphemous-requiem-aeternam */
+@define-color th-window-bg    rgba(0, 0, 0, 0.88);
+@define-color th-button-bg    #0a0805;
+@define-color th-button-fg    #ba8540;
+@define-color th-accent       #ba8540;
+@define-color th-accent-text  #000000;
