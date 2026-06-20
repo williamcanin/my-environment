@@ -8,6 +8,39 @@
 THEME="${1:-}"
 ACTIVE_FILE="${HOME}/.config/my-environment/.active-theme"
 
+if [ -z "$THEME" ]; then
+  THEME=$(
+    rofi -dmenu -p "   Select Theme" -i -theme-str 'listview {lines: 10;}' <<'EOF'
+01 - Blasphemous - Penitent
+02 - Blasphemous - Echoes Of Salt
+03 - Blasphemous - Fragment Of Guilt
+04 - Blasphemous - Kneeling Stone
+05 - Blasphemous - Requiem Aeternam
+06 - Blasphemous - Ten Piedad
+07 - Blasphemous II - Mea Culpa
+08 - Blasphemous II - Repose Of The Silent One
+09 - Blasphemous II - Red Forest
+10 - Blasphemous II - The Third Sin
+EOF
+  )
+
+  [ -z "$THEME" ] && exit 0
+
+  case "$THEME" in
+    "01 - Blasphemous - Penitent")                THEME="blasphemous-penitent" ;;
+    "02 - Blasphemous - Echoes Of Salt")          THEME="blasphemous-echoes-of-salt" ;;
+    "03 - Blasphemous - Fragment Of Guilt")       THEME="blasphemous-fragment-of-guilt" ;;
+    "04 - Blasphemous - Kneeling Stone")          THEME="blasphemous-kneeling-stone" ;;
+    "05 - Blasphemous - Requiem Aeternam")        THEME="blasphemous-requiem-aeternam" ;;
+    "06 - Blasphemous - Ten Piedad")              THEME="blasphemous-ten-piedad" ;;
+    "07 - Blasphemous II - Mea Culpa")            THEME="blasphemous-mea-culpa" ;;
+    "08 - Blasphemous II - Repose Of The Silent One") THEME="blasphemous-II-repose-of-the-silent-one" ;;
+    "09 - Blasphemous II - Red Forest")           THEME="blasphemous-II-red-forest" ;;
+    "10 - Blasphemous II - The Third Sin")        THEME="blashphemous-II-the-third-sin" ;;
+    *) printf 'Invalid theme selection\n' >&2; exit 1 ;;
+  esac
+fi
+
 HYPR_THEMES="${HOME}/.config/hypr/themes"
 WAYBAR_THEMES="${HOME}/.config/waybar/themes"
 QS_THEMES="${HOME}/.config/quickshell/sidebar-right/themes"

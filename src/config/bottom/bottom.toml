@@ -1,21 +1,21 @@
-# Blasphemous Requiem Aeternam theme for Bottom
+# Blasphemous Penitent theme for Bottom
 
 [color]
 background = "#000000"
-foreground = "#ba8540"
-border = "#ba8540"
-text = "#ba8540"
+foreground = "#e0e0e0"
+border = "#e0e0e0"
+text = "#e0e0e0"
 selected_text = "#000000"
-selected_bg = "#ba8540"
+selected_bg = "#e0e0e0"
 
 [colors]
-cpu_color = "#ba8540"
-mem_color = "#8a6030"
-swap_color = "#5a4020"
-rx_color = "#c8a060"
-tx_color = "#ba8540"
-rx_total_color = "#a07040"
-tx_total_color = "#c8a060"
-process_color = "#ba8540"
-process_highlighted_color = "#d49e52"
-average_cpu_color = "#c8a060"
+cpu_color = "#e0e0e0"
+mem_color = "#888888"
+swap_color = "#666666"
+rx_color = "#cccccc"
+tx_color = "#e0e0e0"
+rx_total_color = "#aaaaaa"
+tx_total_color = "#cccccc"
+process_color = "#e0e0e0"
+process_highlighted_color = "#ffffff"
+average_cpu_color = "#cccccc"

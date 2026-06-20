@@ -299,12 +299,7 @@ hl.bind(mod .. " + comma", hl.dsp.exec_cmd("qs -c sidebar-right ipc call sidebar
 hl.bind(mod .. " + Y", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/wallpaper-pick.sh"))
 
 -- Theme switcher ------------------------------------------------------------------------------------------------------
-hl.bind(
-  mod .. " + SHIFT + T",
-  hl.dsp.exec_cmd(
-    "ls ~/.config/hypr/themes | rofi -dmenu -p 'Theme' | xargs -I{} ~/.config/my-environment/sh/theme-switch.sh {}"
-  )
-)
+hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd("sh ~/.config/my-environment/sh/theme-switch.sh"))
 
 -- Finder --------------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + D", hl.dsp.exec_cmd('rofi -show drun -display-drun "drun"'))

@@ -34,8 +34,7 @@ BaseCard {
 
     Process {
         id: themeProc
-        command: ["bash", "-c",
-            "ls $HOME/.config/hypr/themes | rofi -dmenu -p 'Theme' | xargs -I{} $HOME/.config/my-environment/sh/theme-switch.sh {}"
+        command: ["sh", "-c", "$HOME/.config/my-environment/sh/theme-switch.sh"
         ]
         onExited: Theme.reloadActiveTheme()
     }
