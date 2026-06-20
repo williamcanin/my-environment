@@ -1,0 +1,8 @@
+/* theme: blasphemous-II-repose-of-the-silent-one — sysinfo panel */
+@define-color th-background    #141e1e;
+@define-color th-header        #5a8a8a;
+@define-color th-foreground    #d8e0de;
+@define-color th-window-bg     rgba(53, 74, 74, 0.22);
+@define-color th-border        rgba(255, 255, 255, 0.05);
+@define-color th-border-header rgba(255, 255, 255, 0.05);
+@define-color th-disconnected rgba(255, 255, 255, 0.33);

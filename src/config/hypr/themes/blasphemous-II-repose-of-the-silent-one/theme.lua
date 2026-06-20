@@ -1,0 +1,21 @@
+-- Theme: blasphemous-II-repose-of-the-silent-one
+-- Loaded by hyprland.lua via dofile()
+-- Dark theme with blue-green accents matching the wallpaper
+return {
+  -- Borders: muted teal-gray tones
+  border_active = "rgba(5a8a8aff)",
+  border_inactive = "rgba(354a4aff)",
+  -- Group bar
+  groupbar_active = "rgba(5a8a8aff)",
+  groupbar_inactive = "rgba(354a4acc)",
+  -- Shadow: dark and subtle
+  shadow_color = 0xcc000000,
+  shadow_color_inactive = 0x66141414,
+  -- Decoration
+  rounding = 8,
+  rounding_power = 2,
+  -- Layout
+  gaps_in = 3,
+  gaps_out = 17,
+  border_size = 1,
+}

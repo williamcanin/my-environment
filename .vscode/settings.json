@@ -184,6 +184,12 @@
     }
   },
   "chat.tools.terminal.autoApprove": {
-    "mkdir": true
+    "mkdir": true,
+    "/^sh src/config/my-environment/sh/theme-switch\\.sh blasphemous-II-repose-of-the-silent-one 2>&1 \\| grep -E \"\\(Theme\\|error\\|Error\\|✓\\|✗\\)\" \\| head -20$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "pkill": true,
+    "qs": true
   }
 }

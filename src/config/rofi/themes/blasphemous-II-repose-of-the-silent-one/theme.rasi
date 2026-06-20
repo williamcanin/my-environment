@@ -1,0 +1,10 @@
+/* theme: blasphemous-II-repose-of-the-silent-one */
+* {
+    th-bg:            rgba(20, 32, 32, 88%);
+    th-fg:            rgb(90, 138, 138);
+    th-fg-selected:   rgba(220, 230, 228, 100%);
+    th-row-alt:       rgba(90, 138, 138, 6%);
+    th-row-selected:  rgba(53, 74, 74, 0.90);
+    th-border-color:  rgba(90, 138, 138, 0.40);
+    th-separator:     rgba(100, 150, 150, 0.58);
+}

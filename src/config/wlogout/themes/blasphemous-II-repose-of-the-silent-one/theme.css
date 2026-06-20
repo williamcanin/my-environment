@@ -1,0 +1,6 @@
+/* theme: blasphemous-II-repose-of-the-silent-one */
+@define-color th-window-bg    rgba(18, 28, 28, 0.87);
+@define-color th-button-bg    #243434;
+@define-color th-button-fg    #d8e0de;
+@define-color th-accent       #5a8a8a;
+@define-color th-accent-text  #141e1e;

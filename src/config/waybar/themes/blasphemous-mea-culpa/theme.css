@@ -10,3 +10,14 @@
 @define-color th-right02-bg      rgba(143, 199, 199, 0.13);
 @define-color th-border-rights   rgba(255, 255, 255, .35);
 @define-color th-window-fg       #e7eeed;
+
+/* Status */
+@define-color th-danger          #b45a52;
+@define-color th-warn            #9b7d35;
+@define-color th-ok              #3a6b63;
+@define-color th-recording       #b45a52;
+@define-color th-recording-pause #9b7d35;
+@define-color th-power           #b45a52;
+@define-color th-mpris-bg        rgba(0, 0, 0, 0.52);
+@define-color th-mpris-border    rgba(255, 255, 255, 0.42);
+@define-color th-mpris-fg-anim   #3a6b63;

@@ -1,0 +1,23 @@
+/* theme: blasphemous-II-repose-of-the-silent-one */
+@define-color th-foreground      #d8e0de;
+@define-color th-foreground2     #d8e0de;
+@define-color th-decorate        #5a8a8a;
+@define-color th-decorate-rgba   rgba(90, 138, 138, 0.45);
+@define-color th-hover           #b0c0be;
+@define-color th-background      #141e1e;
+@define-color th-background-rgba rgba(20, 30, 30, 0.80);
+@define-color th-right1-bg       rgba(53, 74, 74, 0.55);
+@define-color th-right02-bg      rgba(90, 138, 138, 0.15);
+@define-color th-border-rights   rgba(255, 255, 255, .32);
+@define-color th-window-fg       #d8e0de;
+
+/* Status */
+@define-color th-danger          #b45a52;
+@define-color th-warn            #9b7d35;
+@define-color th-ok              #3a6b63;
+@define-color th-recording       #b45a52;
+@define-color th-recording-pause #9b7d35;
+@define-color th-power           #b45a52;
+@define-color th-mpris-bg        rgba(0, 0, 0, 0.52);
+@define-color th-mpris-border    rgba(255, 255, 255, 0.42);
+@define-color th-mpris-fg-anim   #3a6b63;

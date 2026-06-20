@@ -53,7 +53,7 @@ window#waybar.empty #window {
 #workspaces button.focused:hover,
 #workspaces button.empty {
   text-shadow: none;
-  background: @th-decorate;
+  background: @th-foreground;
   box-shadow: none;
   border: none;
   border-radius: 4px;
