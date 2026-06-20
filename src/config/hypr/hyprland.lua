@@ -9,11 +9,12 @@ local _theme_file = io.open(os.getenv("HOME") .. "/.config/my-environment/.activ
 local _theme_name = "blasphemous-echoes-of-salt"
 if _theme_file then
   local _line = _theme_file:read("*l")
-  if _line and _line ~= "" then _theme_name = _line end
+  if _line and _line ~= "" then
+    _theme_name = _line
+  end
   _theme_file:close()
 end
-local theme = dofile(os.getenv("HOME") ..
-  "/.config/hypr/themes/" .. _theme_name .. "/theme.lua")
+local theme = dofile(os.getenv("HOME") .. "/.config/hypr/themes/" .. _theme_name .. "/theme.lua")
 -- End theme loader ----------------------------------------------------------------------------------------------------
 
 -- Monitor -------------------------------------------------------------------------------------------------------------
@@ -298,9 +299,12 @@ hl.bind(mod .. " + comma", hl.dsp.exec_cmd("qs -c sidebar-right ipc call sidebar
 hl.bind(mod .. " + Y", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/wallpaper-pick.sh"))
 
 -- Theme switcher ------------------------------------------------------------------------------------------------------
-hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd(
-  "ls ~/.config/hypr/themes | rofi -dmenu -p 'Theme' | xargs -I{} ~/.config/my-environment/sh/theme-switch.sh {}"
-))
+hl.bind(
+  mod .. " + SHIFT + T",
+  hl.dsp.exec_cmd(
+    "ls ~/.config/hypr/themes | rofi -dmenu -p 'Theme' | xargs -I{} ~/.config/my-environment/sh/theme-switch.sh {}"
+  )
+)
 
 -- Finder --------------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + D", hl.dsp.exec_cmd('rofi -show drun -display-drun "drun"'))
@@ -587,7 +591,7 @@ hl.bind(mod .. " + C", hl.dsp.exec_cmd("rofi -show calc -modi calc -no-show-matc
 hl.bind(mod .. " + escape", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh"))
 
 -- Lock session --------------------------------------------------------------------------------------------------------
-hl.bind(mod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/power-menu.sh --lock"))
+hl.bind(mod .. " + L", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/power-menu.sh --lock"))
 
 -- Reload Hyprland -----------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + SHIFT + R", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/init.sh --reload"))
