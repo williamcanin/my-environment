@@ -1,0 +1,23 @@
+/* theme: blashphemous-II-the-third-sin */
+@define-color th-foreground      #ffffff;
+@define-color th-foreground2     #a0c3bc;
+@define-color th-decorate        #a0c3bc;
+@define-color th-decorate-rgba   rgba(160, 195, 188, 0.45);
+@define-color th-hover           #bcd5d0;
+@define-color th-background      #171e26;
+@define-color th-background-rgba rgba(23, 30, 38, 0.7);
+@define-color th-right1-bg       rgba(87, 41, 46, 0.37);
+@define-color th-right02-bg      rgba(160, 195, 188, 0.12);
+@define-color th-border-rights   rgba(255, 255, 255, .35);
+@define-color th-window-fg       #ffffff;
+
+/* Status */
+@define-color th-danger          #57292e;
+@define-color th-warn            #8a5a40;
+@define-color th-ok              #7a9f96;
+@define-color th-recording       #57292e;
+@define-color th-recording-pause #8a5a40;
+@define-color th-power           #57292e;
+@define-color th-mpris-bg        rgba(0, 0, 0, 0.52);
+@define-color th-mpris-border    rgba(255, 255, 255, 0.42);
+@define-color th-mpris-fg-anim   #7a9f96;

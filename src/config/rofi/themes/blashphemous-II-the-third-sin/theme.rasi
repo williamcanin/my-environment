@@ -1,0 +1,10 @@
+/* theme: blashphemous-II-the-third-sin */
+* {
+    th-bg:            rgba(23, 30, 38, 75%);
+    th-fg:            rgb(160, 195, 188);
+    th-fg-selected:   rgba(255, 255, 255, 100%);
+    th-row-alt:       rgba(255,255,255,6%);
+    th-row-selected:  rgba(87, 41, 46, 0.769);
+    th-border-color:  rgba(243, 243, 243, 0.33);
+    th-separator:     rgba(160, 195, 188, 0.99);
+}

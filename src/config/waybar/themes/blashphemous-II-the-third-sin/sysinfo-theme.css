@@ -1,0 +1,8 @@
+/* theme: blashphemous-II-the-third-sin — sysinfo panel */
+@define-color th-background    #171e26;
+@define-color th-header        #a0c3bc;
+@define-color th-foreground    #c6d5d0;
+@define-color th-window-bg     rgba(87, 41, 46, 0.06);
+@define-color th-border        rgba(255, 255, 255, 0.06);
+@define-color th-border-header rgba(255, 255, 255, 0.06);
+@define-color th-disconnected  rgba(255, 255, 255, 0.35);
