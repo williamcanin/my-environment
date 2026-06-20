@@ -1,0 +1,22 @@
+/* theme: blasphemous-penitent */
+@define-color th-foreground      #e0e0e0;
+@define-color th-foreground2     #e0e0e0;
+@define-color th-decorate        #e0e0e0;
+@define-color th-decorate-rgba   rgba(224, 224, 224, 0.45);
+@define-color th-hover           #ffffff;
+@define-color th-background      #000000;
+@define-color th-background-rgba rgba(0, 0, 0, 0.88);
+@define-color th-right1-bg       rgba(224, 224, 224, 0.06);
+@define-color th-right02-bg      rgba(224, 224, 224, 0.03);
+@define-color th-border-rights   rgba(224, 224, 224, 0.25);
+@define-color th-window-fg       #e0e0e0;
+
+@define-color th-danger          #e0e0e0;
+@define-color th-warn            #e0e0e0;
+@define-color th-ok              #e0e0e0;
+@define-color th-recording       #e0e0e0;
+@define-color th-recording-pause #e0e0e0;
+@define-color th-power           #e0e0e0;
+@define-color th-mpris-bg        rgba(0, 0, 0, 0.60);
+@define-color th-mpris-border    rgba(224, 224, 224, 0.30);
+@define-color th-mpris-fg-anim   #e0e0e0;

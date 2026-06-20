@@ -1,0 +1,8 @@
+/* theme: blasphemous-penitent — sysinfo panel */
+@define-color th-background    #000000;
+@define-color th-header        #e0e0e0;
+@define-color th-foreground    #cccccc;
+@define-color th-window-bg     rgba(224, 224, 224, 0.04);
+@define-color th-border        rgba(224, 224, 224, 0.08);
+@define-color th-border-header rgba(224, 224, 224, 0.06);
+@define-color th-disconnected  rgba(224, 224, 224, 0.30);

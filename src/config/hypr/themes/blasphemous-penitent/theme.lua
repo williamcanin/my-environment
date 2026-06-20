@@ -1,0 +1,14 @@
+-- Theme: blasphemous-penitent
+return {
+  border_active          = "rgba(e0e0e0ff)",
+  border_inactive        = "rgba(1a1a1aff)",
+  groupbar_active        = "rgba(e0e0e0ff)",
+  groupbar_inactive      = "rgba(1a1a1acc)",
+  shadow_color           = 0xcc000000,
+  shadow_color_inactive  = 0x66000000,
+  rounding               = 8,
+  rounding_power         = 2,
+  gaps_in                = 3,
+  gaps_out               = 17,
+  border_size            = 1,
+}

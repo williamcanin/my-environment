@@ -1,0 +1,6 @@
+/* theme: blasphemous-penitent */
+@define-color th-window-bg    rgba(0, 0, 0, 0.88);
+@define-color th-button-bg    #0a0a0a;
+@define-color th-button-fg    #e0e0e0;
+@define-color th-accent       #e0e0e0;
+@define-color th-accent-text  #000000;

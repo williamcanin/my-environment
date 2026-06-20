@@ -1,0 +1,10 @@
+/* theme: blasphemous-penitent */
+* {
+    th-bg:            rgba(0, 0, 0, 94%);
+    th-fg:            rgb(224, 224, 224);
+    th-fg-selected:   rgba(224, 224, 224, 100%);
+    th-row-alt:       rgba(224, 224, 224, 4%);
+    th-row-selected:  rgba(20, 20, 20, 0.90);
+    th-border-color:  rgba(224, 224, 224, 0.35);
+    th-separator:     rgba(224, 224, 224, 0.15);
+}
