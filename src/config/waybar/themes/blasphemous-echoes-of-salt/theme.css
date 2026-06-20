@@ -1,6 +1,6 @@
 /* theme: blasphemous-echoes-of-salt */
 @define-color th-foreground      #ffffff;
-@define-color th-foreground2     #181818;
+@define-color th-foreground2     #ffffff;
 @define-color th-decorate        #3aa99f;
 @define-color th-decorate-rgba   rgba(58, 169, 159, 0.45);
 @define-color th-hover           #86e0d9;
