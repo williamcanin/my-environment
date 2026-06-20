@@ -13,6 +13,7 @@ QtObject {
     readonly property string cardTitleNetwork:       isPortuguese ? "REDE" : "NETWORK"
     readonly property string cardTitleSystem:        isPortuguese ? "SISTEMA" : "SYSTEM"
     readonly property string cardTitleKeyboard:      isPortuguese ? "TECLADO" : "KEYBOARD"
+    readonly property string cardTitleAppearance:    isPortuguese ? "APARENCIA" : "APPEARANCE"
     readonly property string cardTitlePower:         isPortuguese ? "ENERGIA" : "POWER"
 
     // ── NotificationCard ──
@@ -34,6 +35,10 @@ QtObject {
     readonly property string weatherHumidity:  isPortuguese ? "Umidade" : "Humidity"
     readonly property string weatherWind:      isPortuguese ? "Vento" : "Wind"
     readonly property string weatherRefresh:   isPortuguese ? "Atualizar" : "Refresh"
+
+    // ── AppearanceCard ──
+    readonly property string btnWallpaper:    isPortuguese ? "Papel de Parede" : "Wallpaper"
+    readonly property string btnTheme:        isPortuguese ? "Tema" : "Theme"
 
     // ── PowerCard ──
     readonly property var _ptProfiles: [
