@@ -1,0 +1,21 @@
+# Blasphemous Ten Piedad theme for Bottom
+
+[color]
+background = "#1c1c1f"
+foreground = "#d4ccb0"
+border = "#c8a863"
+text = "#d4ccb0"
+selected_text = "#45342f"
+selected_bg = "#c8a863"
+
+[colors]
+cpu_color = "#c8a863"
+mem_color = "#4a5260"
+swap_color = "#7a4a44"
+rx_color = "#b0a680"
+tx_color = "#c8a863"
+rx_total_color = "#a09670"
+tx_total_color = "#b0a680"
+process_color = "#d4ccb0"
+process_highlighted_color = "#c8a863"
+average_cpu_color = "#b0a680"

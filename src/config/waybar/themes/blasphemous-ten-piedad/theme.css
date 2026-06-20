@@ -1,0 +1,29 @@
+/* theme: blasphemous-ten-piedad */
+/* bg:        #45342f  — dark warm brown (wallpaper)                           */
+/* fg:        #d4ccb0  — warm light beige (wallpaper)                          */
+/* accent:    #c8a863  — golden (wallpaper)                                    */
+/* amber:     #8e5c32  — deep amber (wallpaper)                                */
+/* olive:     #a09670  — warm olive (wallpaper)                                */
+
+@define-color th-foreground      #d4ccb0;
+@define-color th-foreground2     #c8a863;
+@define-color th-decorate        #c8a863;
+@define-color th-decorate-rgba   rgba(200, 168, 99, 0.50);
+@define-color th-hover           #d4b878;
+@define-color th-background      #45342f;
+@define-color th-background-rgba rgba(69, 52, 47, 0.88);
+@define-color th-right1-bg       rgba(160, 150, 112, 0.20);
+@define-color th-right02-bg      rgba(200, 168, 99, 0.12);
+@define-color th-border-rights   rgba(212, 204, 176, 0.30);
+@define-color th-window-fg       #d4ccb0;
+
+/* Status */
+@define-color th-danger          #7a4a44;
+@define-color th-warn            #c8a863;
+@define-color th-ok              #a09670;
+@define-color th-recording       #7a4a44;
+@define-color th-recording-pause #c8a863;
+@define-color th-power           #7a4a44;
+@define-color th-mpris-bg        rgba(10, 10, 12, 0.55);
+@define-color th-mpris-border    rgba(212, 204, 176, 0.25);
+@define-color th-mpris-fg-anim   #a09670;

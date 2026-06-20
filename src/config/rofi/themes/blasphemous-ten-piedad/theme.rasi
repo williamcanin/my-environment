@@ -1,0 +1,10 @@
+/* theme: blasphemous-ten-piedad */
+* {
+    th-bg:            rgba(69, 52, 47, 94%);
+    th-fg:            rgb(200, 168, 99);
+    th-fg-selected:   rgba(212, 204, 176, 100%);
+    th-row-alt:       rgba(212, 204, 176, 6%);
+    th-row-selected:  rgba(75, 69, 56, 0.85);
+    th-border-color:  rgba(200, 168, 99, 0.45);
+    th-separator:     rgba(200, 168, 99, 0.25);
+}

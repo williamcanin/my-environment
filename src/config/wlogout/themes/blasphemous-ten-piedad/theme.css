@@ -1,0 +1,6 @@
+/* theme: blasphemous-ten-piedad */
+@define-color th-window-bg    rgba(28, 28, 31, 0.88);
+@define-color th-button-bg    #242226;
+@define-color th-button-fg    #d4ccb0;
+@define-color th-accent       #c8a863;
+@define-color th-accent-text  #45342f;

@@ -1,0 +1,8 @@
+/* theme: blasphemous-ten-piedad — sysinfo panel */
+@define-color th-background    #45342f;
+@define-color th-header        #c8a863;
+@define-color th-foreground    #c8bda8;
+@define-color th-window-bg     rgba(75, 69, 56, 0.35);
+@define-color th-border        rgba(212, 204, 176, 0.08);
+@define-color th-border-header rgba(212, 204, 176, 0.06);
+@define-color th-disconnected  rgba(212, 204, 176, 0.35);
