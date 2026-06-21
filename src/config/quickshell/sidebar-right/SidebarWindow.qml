@@ -76,7 +76,7 @@ PanelWindow {
         Rectangle {
             anchors.fill: parent
             color: Theme.bgPanel
-            border.color: Theme.accent
+            border.color: Theme.borderSubtle
             border.width: 1
             radius: Theme.radius
         }
