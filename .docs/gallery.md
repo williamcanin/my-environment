@@ -61,7 +61,7 @@ permalink: /gallery/
      das outras imagens do MESMO tema, fechando o ciclo (última -> primeira e vice-versa). -->
 <div class="lightbox" id="blasphemous-echoes-of-salt-1">
 <a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
-<a href="#blasphemous-echoes-of-salt-3" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<a href="#blasphemous-echoes-of-salt-6" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
 <img src="{{ '/.docs/images/themes/blasphemous-echoes-of-salt/preview-1.png' | relative_url }}" alt="Blasphemous - Echoes Of Salt, prévia 1">
 <a href="#blasphemous-echoes-of-salt-2" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">1 / 6</span>
@@ -77,28 +77,28 @@ permalink: /gallery/
 <a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
 <a href="#blasphemous-echoes-of-salt-2" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
 <img src="{{ '/.docs/images/themes/blasphemous-echoes-of-salt/preview-3.png' | relative_url }}" alt="Blasphemous - Echoes Of Salt, prévia 3">
-<a href="#blasphemous-echoes-of-salt-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<a href="#blasphemous-echoes-of-salt-4" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">3 / 6</span>
 </div>
 <div class="lightbox" id="blasphemous-echoes-of-salt-4">
 <a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
 <a href="#blasphemous-echoes-of-salt-3" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
 <img src="{{ '/.docs/images/themes/blasphemous-echoes-of-salt/preview-4.png' | relative_url }}" alt="Blasphemous - Echoes Of Salt, prévia 4">
-<a href="#blasphemous-echoes-of-salt-2" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<a href="#blasphemous-echoes-of-salt-5" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">4 / 6</span>
 </div>
 <div class="lightbox" id="blasphemous-echoes-of-salt-5">
 <a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
 <a href="#blasphemous-echoes-of-salt-4" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
 <img src="{{ '/.docs/images/themes/blasphemous-echoes-of-salt/preview-5.png' | relative_url }}" alt="Blasphemous - Echoes Of Salt, prévia 5">
-<a href="#blasphemous-echoes-of-salt-3" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<a href="#blasphemous-echoes-of-salt-6" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">5 / 6</span>
 </div>
 <div class="lightbox" id="blasphemous-echoes-of-salt-6">
 <a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
 <a href="#blasphemous-echoes-of-salt-5" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
 <img src="{{ '/.docs/images/themes/blasphemous-echoes-of-salt/preview-6.png' | relative_url }}" alt="Blasphemous - Echoes Of Salt, prévia 6">
-<a href="#blasphemous-echoes-of-salt-4" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<a href="#blasphemous-echoes-of-salt-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">6 / 6</span>
 </div>
 
