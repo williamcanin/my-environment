@@ -1,21 +1,21 @@
-# Blasphemous Penitent theme for Bottom
+# Minimal theme for Bottom
 
 [color]
-background = "#000000"
-foreground = "#e0e0e0"
-border = "#e0e0e0"
-text = "#e0e0e0"
-selected_text = "#000000"
-selected_bg = "#e0e0e0"
+background = "#2F3541"
+foreground = "#A6B8C4"
+border = "#3B4352"
+text = "#A6B8C4"
+selected_text = "#2F3541"
+selected_bg = "#7492A7"
 
 [colors]
-cpu_color = "#e0e0e0"
-mem_color = "#888888"
-swap_color = "#666666"
-rx_color = "#cccccc"
-tx_color = "#e0e0e0"
-rx_total_color = "#aaaaaa"
-tx_total_color = "#cccccc"
-process_color = "#e0e0e0"
-process_highlighted_color = "#ffffff"
-average_cpu_color = "#cccccc"
+cpu_color = "#7492A7"
+mem_color = "#A6B8C4"
+swap_color = "#545C69"
+rx_color = "#A6B8C4"
+tx_color = "#7492A7"
+rx_total_color = "#545C69"
+tx_total_color = "#A6B8C4"
+process_color = "#A6B8C4"
+process_highlighted_color = "#7492A7"
+average_cpu_color = "#A6B8C4"
