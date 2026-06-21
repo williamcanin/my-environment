@@ -21,6 +21,7 @@ CONFIG_SRC="$REPO_ROOT/src/config"
 CONFIG_DST="$HOME/.config"
 FONTS_SRC="$REPO_ROOT/src/fonts"
 FONTS_DST="$HOME/.local/share/fonts"
+LOCK_FILE="$CONFIG_DST/my-environment/.install.lock"
 
 BASE_DEPS="git @development-tools golang gcc lua wayland wayland-protocols-devel"
 
@@ -137,6 +138,9 @@ copy_configs() {
 
   find "$CONFIG_SRC" -type f -name "*.sh" -exec chmod +x {} \;
 
+  skip_backup=false
+  [ -f "$LOCK_FILE" ] && skip_backup=true
+
   for src_dir in "$CONFIG_SRC"/*/; do
     [ -d "$src_dir" ] || continue
 
@@ -145,9 +149,14 @@ copy_configs() {
     dst_dir="$CONFIG_DST/$name"
 
     if [ -d "$dst_dir" ]; then
-      backup="${dst_dir}.bak.$(date +%Y%m%d%H%M%S)"
-      mv "$dst_dir" "$backup"
-      warn "$name — backup saved in $backup"
+      if [ "$skip_backup" = true ]; then
+        rm -rf "$dst_dir"
+        warn "$name — overwritten (lock present)"
+      else
+        backup="${dst_dir}.bak.$(date +%Y%m%d%H%M%S)"
+        mv "$dst_dir" "$backup"
+        warn "$name — backup saved in $backup"
+      fi
     fi
 
     cp -rv "$src_dir" "$CONFIG_DST/"
@@ -164,6 +173,13 @@ copy_configs() {
     rm -rfv "$old"
     warn "Old backup removed: $old"
   done
+}
+
+create_lock() {
+  mkdir -p "$(dirname "$LOCK_FILE")"
+  printf '%s\n' "Installed on: $(date)" > "$LOCK_FILE"
+  printf '%s\n' "Version: $VERSION" >> "$LOCK_FILE"
+  ok "Installation locked."
 }
 
 patch_configs_for_fedora() {
@@ -229,6 +245,7 @@ install() {
   settings_cosmic
   set_gsettings
   copy_configs
+  create_lock
   patch_configs_for_fedora
   symlinks
   copy_fonts
@@ -258,5 +275,4 @@ case "$1" in
   exit 1
   ;;
 esac
-exit 0
 exit 0
