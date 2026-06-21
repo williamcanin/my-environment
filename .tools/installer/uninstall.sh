@@ -379,6 +379,33 @@ uninstall() {
 
   echo ""
   ok "Uninstall complete!"
+
+  if confirm "Logout now to apply changes?"; then
+    if $DRY_RUN; then
+      warn "[DRY-RUN] Would log out"
+    else
+      ok "Logging out..."
+      case "${DESKTOP_SESSION:-${XDG_SESSION_DESKTOP:-}}" in
+        *hyprland*|*Hyprland*)
+          if command -v hyprctl >/dev/null 2>&1; then
+            hyprctl dispatch exit
+          else
+            loginctl terminate-session self
+          fi
+          ;;
+        sway)
+          if command -v swaymsg >/dev/null 2>&1; then
+            swaymsg exit
+          else
+            loginctl terminate-session self
+          fi
+          ;;
+        *)
+          loginctl terminate-session self
+          ;;
+      esac
+    fi
+  fi
 }
 
 usage() {
