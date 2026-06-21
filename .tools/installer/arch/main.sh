@@ -16,6 +16,15 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 . "$SCRIPT_DIR/../libs/cosmic.lib"
 . "$SCRIPT_DIR/../libs/copyright.lib"
 
+# When run via sudo, adjust HOME to the original user
+if [ "$(id -u)" -eq 0 ] && [ -n "${SUDO_USER:-${DOAS_USER:-}}" ]; then
+  user="${SUDO_USER:-${DOAS_USER:-}}"
+  REAL_HOME="$(getent passwd "$user" | cut -d: -f6)" || REAL_HOME=""
+  if [ -n "$REAL_HOME" ] && [ -d "$REAL_HOME" ]; then
+    HOME="$REAL_HOME"
+    warn "Root execution detected — using HOME=$HOME"
+  fi
+fi
 
 CONFIG_SRC="$REPO_ROOT/src/config"
 CONFIG_DST="$HOME/.config"

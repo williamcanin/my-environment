@@ -188,13 +188,29 @@ main() {
   extracted_dir=$(find "$WORKDIR" -mindepth 1 -maxdepth 1 -type d | head -n1)
   [ -n "$extracted_dir" ] && [ -d "$extracted_dir" ] || die "Could not locate the extracted folder."
 
-  info "Running 'make install' in ${extracted_dir}..."
+  REAL_USER="${SUDO_USER:-${DOAS_USER:-}}"
+  REAL_HOME="${HOME}"
+
+  if [ "$(id -u)" -eq 0 ]; then
+    if [ -n "$REAL_USER" ]; then
+      REAL_HOME="$(getent passwd "$REAL_USER" | cut -d: -f6)" || die "Failed to determine home directory for $REAL_USER."
+      info "Detected sudo — installing as $REAL_USER (HOME=$REAL_HOME)"
+    else
+      die "This script must not be run as root. Run as a regular user with sudo access."
+    fi
+  fi
+
+  info "Running 'make install'..."
   if [ ! -t 0 ]; then
     warn "stdin is not a terminal — if 'make install' needs to prompt for input"
     warn "(e.g. distribution selection), it won't be able to read your answer."
     warn "Re-run using: sh -c \"\$(curl -fsSL ${SITE_URL}/install.sh)\" instead of '| sh'."
   fi
-  (cd "$extracted_dir" && make install) || die "Failed to run 'make install'."
+  if [ -n "$REAL_USER" ]; then
+    sudo -u "$REAL_USER" env HOME="$REAL_HOME" make -C "$extracted_dir" install || die "Failed to run 'make install'."
+  else
+    make -C "$extracted_dir" install || die "Failed to run 'make install'."
+  fi
 
   ok "${NAME} installed successfully (version ${tag})."
 }
