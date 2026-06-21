@@ -1,11 +1,11 @@
 import QtQuick
 
 QtObject {
-    readonly property color accent:          "#7492A7"
-    readonly property color accentDim:       "#3B4352"
-    readonly property color accentMid:       "#7492A7"
-    readonly property color accentFaint:     "#3B4352"
-    readonly property color accentLight:     "#A6B8C4"
+    readonly property color accent:          "#7FA4BF"
+    readonly property color accentDim:       "#3B4A59"
+    readonly property color accentMid:       "#6A8BA3"
+    readonly property color accentFaint:     "#38434F"
+    readonly property color accentLight:     "#BFCDDA"
 
     readonly property color fgTitle:         "#A6B8C4"
     readonly property color fgText:          "#A6B8C4"
