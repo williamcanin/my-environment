@@ -1,15 +1,27 @@
 #!/usr/bin/env sh
 # install.sh — my-environment installer via GitHub Releases
 #
-# Usage:
+# Usage (recommended — required if "make install" prompts for input,
+# e.g. distribution selection):
+#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)"
+#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- 0.1.1
+#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- --releases
+#
+# Usage (pipe form — only safe for fully non-interactive installs):
 #   curl -fsSL https://williamcanin.github.io/my-environment/install.sh | sh
 #   curl -fsSL https://williamcanin.github.io/my-environment/install.sh | sh -s -- 0.1.1
-#   curl -fsSL https://williamcanin.github.io/my-environment/install.sh | sh -s -- --releases
 #
-# Important: when using "curl ... | sh", the script is sent to the shell's
-# standard input. To pass arguments (version, flags), you need "sh -s -- ARGS".
-# Alternatively, the version can also be set via the VERSION environment
-# variable (e.g.: VERSION=0.1.1 curl ... | sh).
+# Why it matters: with "curl ... | sh", the script's stdin is the pipe
+# carrying the script source itself, so any interactive "read" further down
+# the chain (including inside "make install") cannot read from the real
+# terminal and will get empty input. With "sh -c \"$(curl ...)\"", the script
+# is passed as a command-line string instead, so stdin stays attached to your
+# terminal and prompts work normally.
+#
+# Passing arguments (version, flags): with the pipe form use "sh -s -- ARGS";
+# with the sh -c form use "-- ARGS" after the closing quote. Either form also
+# accepts the version via the VERSION environment variable
+# (e.g.: VERSION=0.1.1 sh -c "$(curl -fsSL ...)").
 
 set -eu
 
@@ -17,6 +29,7 @@ set -eu
 NAME="my-environment"
 REPO="williamcanin/my-environment"
 API="https://api.github.com/repos/${REPO}"
+SITE_URL="https://williamcanin.github.io/my-environment"
 WORKDIR=""
 
 # ===== Colors (with fallback when stdout is not a terminal) =====
@@ -55,11 +68,17 @@ Usage:
   install.sh -l, --releases   List available releases
   install.sh -h, --help       Show this help
 
-Examples (via curl | sh):
-  curl -fsSL <url>/install.sh | sh
-  curl -fsSL <url>/install.sh | sh -s -- 0.1.1
-  curl -fsSL <url>/install.sh | sh -s -- --releases
-  VERSION=0.1.1 curl -fsSL <url>/install.sh | sh
+Recommended (works with interactive prompts, e.g. distro selection):
+  sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)"
+  sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)" -- 0.1.1
+  sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)" -- --releases
+
+Pipe form (only safe for non-interactive installs):
+  curl -fsSL ${SITE_URL}/install.sh | sh
+  curl -fsSL ${SITE_URL}/install.sh | sh -s -- 0.1.1
+
+Either form also accepts:
+  VERSION=0.1.1 sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)"
 EOF
 }
 
@@ -170,6 +189,11 @@ main() {
   [ -n "$extracted_dir" ] && [ -d "$extracted_dir" ] || die "Could not locate the extracted folder."
 
   info "Running 'make install' in ${extracted_dir}..."
+  if [ ! -t 0 ]; then
+    warn "stdin is not a terminal — if 'make install' needs to prompt for input"
+    warn "(e.g. distribution selection), it won't be able to read your answer."
+    warn "Re-run using: sh -c \"\$(curl -fsSL ${SITE_URL}/install.sh)\" instead of '| sh'."
+  fi
   (cd "$extracted_dir" && make install) || die "Failed to run 'make install'."
 
   ok "${NAME} installed successfully (version ${tag})."
