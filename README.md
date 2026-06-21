@@ -55,6 +55,20 @@ painel lateral de informações do sistema e uma sidebar na direita com Quickshe
   </tr>
 </table>
 
+## Sumário
+
+- [Features](#features)
+- [Componentes](#componentes)
+- [Temas](#temas)
+- [Sidebar Quickshell](#sidebar-quickshell)
+- [Scripts](#scripts)
+- [Atalhos principais](#atalhos-principais)
+- [Requisitos](#requisitos)
+- [Instalador](#instalador)
+- [Estrutura](#estrutura)
+- [Configurações importantes](#configurações-importantes)
+- [Licença](#licença)
+
 ## Features
 
 - Hyprland 0.55+ configurado em Lua.
