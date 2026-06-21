@@ -1,1 +1,3 @@
 title: ""
+include:
+  - ".docs/gallery.md"

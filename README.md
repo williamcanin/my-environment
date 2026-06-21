@@ -12,49 +12,6 @@ no meu setup diário.
 O visual combina Hyprland com bordas discretas, blur, sombras, wallpaper, tema escuro para GTK/Rofi/terminais, Waybar no topo,
 painel lateral de informações do sistema e uma sidebar na direita com Quickshell/QML.
 
-<table>
-  <tr>
-    <td align="center">
-      <b>Desktop</b><br>
-      <a href="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-1.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-1.png" width="200" alt="Preview 1">
-      </a>
-    </td>
-    <td align="center">
-      <b>Rofi</b><br>
-      <a href="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-2.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-2.png" width="200" alt="Preview 2">
-      </a>
-    </td>
-    <td align="center">
-      <b>Nautilus e SysInfo</b><br>
-      <a href="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-3.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-3.png" width="200" alt="Preview 3">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <b>Kitty e Yazi</b><br>
-      <a href="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-4.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-4.png" width="200" alt="Preview 4">
-      </a>
-    </td>
-    <td align="center">
-      <b>Sidebar Notifications</b><br>
-      <a href="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-5.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-5.png" width="200" alt="Preview 5">
-      </a>
-    </td>
-    <td align="center">
-      <b>Bottom (btm)</b><br>
-      <a href="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-6.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/williamcanin/my-environment/main/.docs/images/preview-6.png" width="200" alt="Preview 6">
-      </a>
-    </td>
-  </tr>
-</table>
-
 ## Sumário
 
 - [Features](#features)
