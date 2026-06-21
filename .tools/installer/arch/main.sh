@@ -39,7 +39,8 @@ PACKAGES="
 "
 
 settings() {
-  printf '%s\n' "open" > "$WAYBAR_CACHE_DIR/sidebar-state"
+  mkdir -p "${HOME}/.cache/waybar"
+  printf '%s\n' "open" > "${HOME}/.cache/waybar/sidebar-state"
 }
 
 install_yay () {

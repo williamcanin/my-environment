@@ -42,7 +42,8 @@ PACKAGES="
 HYPERSHUTDOWN_REPO="https://github.com/hyprwm/hyprshutdown.git"
 
 settings() {
-  echo "open" > "$WAYBAR_CACHE_DIR/sidebar-state"
+  mkdir -p "${HOME}/.cache/waybar"
+  echo "open" > "${HOME}/.cache/waybar/sidebar-state"
 }
 
 ensure_copr() {
