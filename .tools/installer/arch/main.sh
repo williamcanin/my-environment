@@ -39,7 +39,7 @@ PACKAGES="
 "
 
 settings() {
-  echo "open" > "$WAYBAR_CACHE_DIR/sidebar-state"
+  printf '%s\n' "open" > "$WAYBAR_CACHE_DIR/sidebar-state"
 }
 
 install_yay () {
