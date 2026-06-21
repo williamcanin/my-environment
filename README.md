@@ -10,7 +10,7 @@ arquivos de configuração, scripts de automação, temas, fontes e atalhos usad
 no meu setup diário.
 
 O visual combina Hyprland com bordas discretas, blur, sombras, wallpaper, tema escuro para GTK/Rofi/terminais, Waybar no topo,
-painel lateral de (informações do sistema) e uma sidebar na direita com Quickshell/QML.
+painel lateral de informações do sistema e uma sidebar na direita com Quickshell/QML.
 
 <table>
   <tr>
@@ -61,28 +61,24 @@ painel lateral de (informações do sistema) e uma sidebar na direita com Quicks
 - Layout `dwindle`, gaps, cantos arredondados, blur, sombras e animações.
 - Workspaces de 1 a 9, navegação por teclado e modo de resize para janelas flutuantes.
 - Agrupamento de janelas em abas e alternância global com `snappy-switcher`.
-- Waybar superior com workspaces, janela ativa, MPRIS, áudio, rede, CPU, memória,
-  data/hora, idioma do teclado, bandeja, gravação e menu de energia.
-- Waybar lateral de sysinfo com máquina, CPU/GPU, memória, storage, processos,
-  rede e lembrete de atalhos.
-- Quickshell sidebar direita com notificações, calendário, clima, volume, rede,
-  CPU/RAM/GPU, layout do teclado e perfis de energia.
-- Rofi como launcher, menu de energia, calculadora, clipboard picker e base para
-  tema `blasphemous`.
+- Waybar superior com workspaces, janela ativa, MPRIS, áudio, rede, CPU, memória, data/hora, idioma do teclado, bandeja, gravação e menu de energia.
+- Waybar lateral de sysinfo com máquina, CPU/GPU, memória, storage, processos, rede e lembrete de atalhos.
+- Quickshell sidebar direita com notificações, calendário, clima, volume, rede, CPU/RAM/GPU, layout do teclado e perfis de energia.
+- Rofi como launcher, seletor de temas, menu de energia, calculadora e clipboard picker.
 - Histórico de clipboard com `cliphist`, `wl-clipboard` e integração com Rofi.
 - Screenshots com `hyprshot` e edição de região com `satty`.
 - Gravação de tela com `gpu-screen-recorder`, pausa/retomada e status na Waybar.
-- Bloqueio com `hyprlock`, wallpaper desfocado gerado por `magick`, idle via
-  `hypridle` e tela de logout com `wlogout`.
+- Bloqueio com `hyprlock`, wallpaper desfocado gerado por `magick`, idle via `hypridle` e tela de logout com `wlogout`.
+- Sistema completo de temas com 10 variações temáticas inspiradas em *Blasphemous*.
 - Wofi como launcher alternativo ao Rofi.
-- `my-environment/sh/` — biblioteca shell compartilhada com funções de logging,
-  locale, notificações, JSON, manipulação de strings e caminhos.
+- `my-environment/sh/` — biblioteca shell compartilhada com funções de logging, locale, notificações, JSON, manipulação de strings e caminhos.
 - Áudio via PipeWire/WirePlumber, controle por `wpctl`, `pamixer` e `pwvucontrol`.
 - Suporte a atalhos multimídia, brilho, color picker, emoji picker e navegador padrão.
-- Terminais Kitty e Foot com JetBrainsMono Nerd Font, Font Awesome e cores escuras.
-- Yazi com flavor `flexoki-dark`.
+- Terminais Kitty e Foot com JetBrainsMono Nerd Font, Font Awesome e temas por tema ativo.
+- Yazi com flavors customizados (flexoki-dark, flexoki-fragment-of-guilt, repose-of-the-silent-one).
 - Configurações Wayland para Firefox, Electron, SDL2, Java, LibreOffice e cursor.
-- Tema GTK escuro com Graphite-teal-Dark e Mint-Y-Teal para icones aplicado pelo instalador.
+- Tema GTK escuro com Graphite-teal-Dark e Mint-Y-Teal para ícones aplicado pelo instalador.
+- Suporte bilíngue (Português/Inglês) em cheatsheets, menus, sidebar e scripts.
 
 ## Componentes
 
@@ -93,13 +89,13 @@ painel lateral de (informações do sistema) e uma sidebar na direita com Quicks
 | Hyprpaper | Wallpaper |
 | Hypridle | Idle e bloqueio automático |
 | Hyprlock | Tela de bloqueio |
-| Waybar | Barra superior, painel lateral de sysinfo |
+| Waybar | Barra superior + painel lateral de sysinfo |
 | Quickshell | Sidebar direita com widgets em QML |
-| Rofi | Launcher, menus e calculadora |
+| Rofi | Launcher, seletor de temas, menus e calculadora |
 | Wofi | Launcher alternativo |
 | Dunst | Notificações |
 | Kitty / Foot | Terminais |
-| Yazi | File manager TUI |
+| Yazi | File manager TUI com flavors temáticos |
 | Nautilus | File manager gráfico |
 | Snappy Switcher | Alternância de janelas com `Alt+Tab` |
 | PipeWire / WirePlumber | Áudio |
@@ -108,122 +104,162 @@ painel lateral de (informações do sistema) e uma sidebar na direita com Quicks
 | gpu-screen-recorder | Gravação de tela |
 | Bottom / Btop | Monitores de sistema |
 
-## Requisitos
+## Temas
 
-- **Arch Linux** ou **Fedora** 41+.
-- Sessão Wayland com `systemd`.
-- Placa de vídeo e drivers compatíveis com Wayland/Hyprland.
+O projeto possui **10 temas** inspirados na série *Blasphemous* e *Blasphemous II*, com suporte completo a:
 
-> Nota: os configs incluem ajustes para NVIDIA e Nouveau, como
-> `WLR_NO_HARDWARE_CURSORS`, `WLR_RENDERER_ALLOW_SOFTWARE`, `GBM_BACKEND=nvidia-drm`
-> e `LIBVA_DRIVER_NAME=nvidia`. Revise esses valores se usar outra GPU.
+- Hyprland (bordas, sombras, gaps)
+- Waybar (barra superior + sysinfo)
+- Quickshell (sidebar direita)
+- Rofi
+- Kitty
+- Btop / Bottom
+- Dunst
+- Wlogout
+- Snappy-switcher
+- Yazi (flavor)
+- Hyprlock
 
-## Instalação
+### Lista de Temas
 
-Clone o repositório e execute o instalador:
+| # | Tema | Tipo |
+| --- | --- | --- |
+| 01 | Blasphemous - Penitent | Monocromático preto + `#e0e0e0` |
+| 02 | Blasphemous - Echoes Of Salt | Escuro teal/cyan |
+| 03 | Blasphemous - Fragment Of Guilt | Escuro olive/teal |
+| 04 | Blasphemous - Kneeling Stone | Escuro roxo (Catppuccin-like) |
+| 05 | Blasphemous - Requiem Aeternam | Monocromático preto + `#ba8540` |
+| 06 | Blasphemous - Ten Piedad | Escuro terroso/warm |
+| 07 | Blasphemous II - Mea Culpa | Escuro warm neutro |
+| 08 | Blasphemous II - Repose Of The Silent One | Escuro teal/azulado |
+| 09 | Blasphemous II - Red Forest | Claro bege/cinza |
+| 10 | Blasphemous II - The Third Sin | Escuro navy/teal |
 
-```sh
-git clone --depth=1 https://github.com/williamcanin/my-environment.git && cd my-environment && make install
-```
-
-O instalador pergunta qual distribuição usar:
-
-```sh
-→ Select your distribution:
-  [1] Arch Linux
-  [2] Fedora
-Reply >
-```
-
-E valida se a distribuição escolhida corresponde à que está rodando.
-
-O instalador faz, em resumo:
-
-- **Arch**: instala `yay` (se necessário) e pacotes via AUR;
-- **Fedora**: ativa COPR `solopasha/hyprland` e instala pacotes via `dnf`;
-- copia os diretórios de `src/config/*` para `~/.config`;
-- cria backup dos diretórios existentes em `~/.config/*.bak.DATA`;
-- copia fontes de `src/fonts` para `~/.local/share/fonts`;
-- atualiza o cache de fontes;
-- adiciona `~/.config/term/options.sh` ao shell para cores de terminal;
-- aplica Firefox como navegador padrão e tema GTK escuro.
-
-Para atualizar depois:
+### Como usar
 
 ```sh
-make upgrade
+# Com seletor Rofi (menu interativo)
+theme-switch
+
+# Ou diretamente pelo nome
+theme-switch blasphemous-echoes-of-salt
 ```
 
-> **Fedora**: `hyprshutdown` é compilado do fonte, `rofi-calc` é substituído
-> por `qalculate-gtk`, e os pacotes indisponíveis (`smog-bin`, `kooha`,
-> `cosmic-files`, `cosmic-settings`, `uwsm`) são ignorados automaticamente.
-
-## Estrutura
-
-```text
-src/
-  config/
-    hypr/              Hyprland, Hyprpaper, Hypridle, Hyprlock e scripts
-    waybar/            Barra superior, painel sysinfo, estilos e scripts
-    quickshell/        Sidebar direita em QML/Quickshell
-    rofi/              Launcher, menus e tema Blasphemous
-    wofi/              Launcher alternativo
-    wlogout/           Tela de logout
-    kitty/             Terminal principal e docs de atalhos
-    foot/              Terminal alternativo
-    yazi/              File manager TUI e tema Flexoki
-    dunst/             Notificações
-    btop/ bottom/      Monitores de sistema
-    snappy-switcher/   Alternância de janelas Alt+Tab
-    environment.d/     Variáveis de ambiente Wayland
-    term/              Opções compartilhadas do shell
-    gtk-3.0/ gtk-4.0/  Temas e configurações GTK3/GTK4
-    my-environment/    Biblioteca shell compartilhada (sh/)
-  fonts/               Font Awesome e Terminus local
-```
-
-## Themes
-
-Switch the full desktop theme with:
-
-```sh
-theme-switch blasphemous-kneeling-stone
-```
-
-The active theme name is stored as plain text in:
+O tema ativo é armazenado em:
 
 ```text
 ~/.config/my-environment/.active-theme
 ```
 
-Theme files live beside each tool's own config:
+### Estrutura de arquivos do tema
 
 ```text
-src/config/hypr/themes/<theme-name>/
-src/config/waybar/themes/<theme-name>/
-src/config/quickshell/sidebar-right/themes/<theme-name>/
-src/config/rofi/themes/<theme-name>/
-src/config/dunst/themes/<theme-name>/
-src/config/wlogout/themes/<theme-name>/
-src/config/kitty/themes/<theme-name>/
-src/config/btop/themes/<theme-name>/
-src/config/snappy-switcher/themes/<theme-name>/
+src/config/hypr/themes/<theme>/theme.lua          # Bordas, gaps, sombras
+src/config/hypr/themes/<theme>/hyprlock.conf       # Cores do lockscreen
+src/config/waybar/themes/<theme>/theme.css         # Cores da waybar topo
+src/config/waybar/themes/<theme>/sysinfo-theme.css # Cores do painel sysinfo
+src/config/quickshell/sidebar-right/themes/<theme>/Theme.qml  # Cores da sidebar QML
+src/config/rofi/themes/<theme>/theme.rasi          # Cores do launcher
+src/config/kitty/themes/<theme>/theme.conf         # Esquema de cores do terminal
+src/config/btop/themes/<theme>/theme.theme         # Cores do monitor de sistema
+src/config/bottom/themes/<theme>/bottom.toml       # Cores do btm
+src/config/dunst/themes/<theme>/dunstrc.theme      # Cores das notificações
+src/config/wlogout/themes/<theme>/theme.css        # Cores da tela de logout
+src/config/snappy-switcher/themes/<theme>/theme.ini # Cores do alternador de janelas
+src/config/yazi/themes/<theme>/theme.toml          # Flavor do file manager
 ```
 
-To create a new theme, add the matching files for every tool:
+### Wallpapers
 
-- `hypr/theme.lua` and `hypr/hyprlock.conf`
-- `waybar/theme.css` and `waybar/sysinfo-theme.css`
-- `quickshell/sidebar-right/Theme.qml`
-- `rofi/theme.rasi`
-- `dunst/dunstrc.theme`
-- `wlogout/theme.css`
-- `kitty/theme.conf`
-- `btop/theme.theme`
-- `snappy-switcher/theme.ini`
+Cada tema possui um wallpaper correspondente em `src/config/hypr/wallpapers/`:
 
-Optional wallpapers can be added as `wallpaper.jpeg`, `wallpaper.jpg`,
-`wallpaper.png`, or `wallpaper.webp` under `src/config/hypr/themes/<theme-name>/`.
+```text
+blasphemous-echoes-of-salt.jpeg
+blasphemous-fragment-of-guilt.png
+blasphemous-kneeling-stone.png
+blasphemous-mea-culpa.png
+blasphemous-II-repose-of-the-silent-one.jpg
+blasphemous-II-red-forest.png
+blasphemous-II-the-third-sin.jpg
+blasphemous-ten-piedad.jpg
+blasphemous-penitent.jpg
+blasphemous-requiem-aeternam.jpg
+```
+
+### Yazi Flavors
+
+| Flavor | Base |
+| --- | --- |
+| `flexoki-dark` | Escuro (`#100F0F`) com accent cyan |
+| `flexoki-fragment-of-guilt` | Claro (`#EEF7F4`) com accent verde |
+| `repose-of-the-silent-one` | Escuro (`#141E1E`) com accent teal |
+
+## Sidebar Quickshell
+
+Sidebar direita com painéis expansíveis em QML:
+
+| Card | Função |
+| --- | --- |
+| User | Avatar, nome, usuário@hostname |
+| Notifications | Histórico do Dunst (9 notificações, paginação) |
+| Calendar | Calendário interativo com navegação |
+| Weather | Clima via wttr.in (atualização a cada 15min) |
+| Volume | Controle de áudio com `wpctl` |
+| Network | IP, SSID, velocidades up/down |
+| System | CPU, RAM, GPU, VRAM, temperatura GPU |
+| Keyboard | Alternador de layout (BR ABNT2 / US) |
+| Appearance | Seleção de wallpaper e tema |
+| Power | Perfis de energia (powersave/balanced/performance) |
+
+A sidebar carrega o tema dinamicamente — ao trocar o tema, as cores são atualizadas sem reiniciar.
+
+## Scripts
+
+### Hyprland (`src/config/hypr/scripts/`)
+
+| Script | Função |
+| --- | --- |
+| `init.sh` | Inicialização/restart do ambiente |
+| `screenshot.sh` | Screenshot e gravação de tela |
+| `wallpaper-pick.sh` | Seletor de wallpaper com Yazi |
+| `power-menu.sh` | Menu de energia (lock/suspend/logout/reboot/shutdown) |
+| `cheatsheets.sh` | Cheatsheet de atalhos no Rofi |
+
+### Waybar (`src/config/waybar/scripts/`)
+
+| Script | Função |
+| --- | --- |
+| `taskbar.sh` | Dispatcher de ações da barra |
+| `window-or-mpris.sh` | Título da janela ativa ou MPRIS |
+| `netctl.sh` | Ativar/desativar interface de rede |
+
+### Sysinfo (`src/config/waybar/scripts/sysinfo/`)
+
+| Script | Função |
+| --- | --- |
+| `header.sh` | Cabeçalhos do painel (i18n) |
+| `machine-info.sh` | SO, kernel, CPU, GPU, uptime |
+| `temperature-usage_cpu-gpu.sh` | Temperatura e uso CPU/GPU |
+| `memory.sh` | Uso de RAM |
+| `storage.sh` | Uso de disco |
+| `top-processes.sh` | Top processos por CPU |
+| `network.sh` | Informações de rede |
+| `gpu.sh` | Detalhes da GPU |
+
+### Shell library (`src/config/my-environment/sh/`)
+
+| Módulo | Função |
+| --- | --- |
+| `bootstrap.sh` | Carrega todos os módulos |
+| `variables.sh` | Variáveis de ambiente do sistema |
+| `paths.sh` | Funções `paths_cache()` e `paths_config()` |
+| `locale.sh` | Detecção de locale PT/EN |
+| `log.sh` | Logging (info, warn, error, die) |
+| `notify.sh` | Notificações via notify-send |
+| `string.sh` | Utilitários de string (barra de progresso) |
+| `json.sh` | Escape e saída JSON para Waybar |
+| `hypr.sh` | Parse de caminhos do Hyprland |
+| `theme-switch.sh` | Alternância completa de temas |
 
 ## Atalhos principais
 
@@ -276,69 +312,131 @@ Os textos completos ficam em:
 - `src/config/kitty/docs/cheatsheets/pt.txt`
 - `src/config/kitty/docs/cheatsheets/en.txt`
 
-## Configurações importantes
+## Requisitos
 
-### Teclado e idioma
+- **Arch Linux** ou **Fedora** 41+.
+- Sessão Wayland com `systemd`.
+- Placa de vídeo e drivers compatíveis com Wayland/Hyprland.
 
-O ambiente usa `pt_BR.UTF-8`, layout `br,us`, variante `abnt2` e alternância de
-layout com `Alt+Shift`.
+> Nota: os configs incluem ajustes para NVIDIA e Nouveau, como
+> `WLR_NO_HARDWARE_CURSORS`, `WLR_RENDERER_ALLOW_SOFTWARE`, `GBM_BACKEND=nvidia-drm`
+> e `LIBVA_DRIVER_NAME=nvidia`. Revise esses valores se usar outra GPU.
 
-### Sessão Wayland
+## Instalador
 
-As variáveis em `src/config/environment.d/wayland.conf` priorizam execução nativa
-em Wayland para Qt, Firefox, Electron, SDL2, Java e LibreOffice.
-
-### Autostart
-
-Ao iniciar o Hyprland, `src/config/hypr/scripts/init.sh --started` sobe:
-
-- `hyprpaper`;
-- `hypridle`;
-- Waybar superior + Waybar painel sysinfo;
-- `qs -c sidebar-right` (sidebar Quickshell);
-- `dunst`;
-- `snappy-switcher --daemon`;
-- watchers do `cliphist` para texto e imagem (wl-paste);
-- `polkit-gnome-authentication-agent-1`;
-- `bluetooth` + `blueman-applet`. (desabilitado)
-
-### Login via TTY
-
-O arquivo `src/config/profile` serve como referência para iniciar Hyprland direto
-do TTY1, gerar logs em `~/.local/state/hyprland` e manter apenas os logs recentes.
-Use esse arquivo como base para seu `~/.zprofile`, `~/.bash_profile` ou profile
-equivalente.
-
-Ou você simplesmente pode fazer um importe do mesmo no seu profile, assim:
+**Instalação online (RECOMENDADO):**
 
 ```sh
-. "$HOME/.config/profile"
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)"
 ```
 
-### XWayland
+Liste as versões disponíveis:
 
-O Hyprland está com `xwayland.enabled = false`. Se algum aplicativo depender de
-XWayland, ative essa opção em `src/config/hypr/hyprland.lua` e revise as regras de
-janela comentadas no mesmo arquivo.
-
-### Wallpaper e lockscreen
-
-Os wallpapers principais fica em:
-
-```text
-src/config/hypr/wallpapers/
+```sh
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- --releases
 ```
 
-O lockscreen usa o wallpaper definido com blur gerando o `~/.cache/hypr/hyprlock-wallpaper-blur.png`.
+Instalar uma versão específica:
 
-## Comandos úteis
+```sh
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- 0.1.0
+```
+
+**Instalação offline:**
+
+```sh
+git clone --depth=1 https://github.com/williamcanin/my-environment.git && cd my-environment && make install
+```
+
+> Nota: Essa forma de instalação é `INSTÁVEL` porque ela faz a instalação usando a branch, o que pode conter arquivos com bugs por falta de revisão, por isso é sempre recomendado instalar sempre a opção `RECOMENDADA` que usa as releases estáveis e as versões revisadas.
+>
+> Se você guardar o repo git, sempre execute o comando abaixo para atualizar antes de usar o `make install`:
+
+```sh
+make upgrade
+```
+
+Comandos úteis no modo offline:
 
 ```sh
 make help
 make version
 make set-permissions
+make install
 make upgrade
 ```
+
+O instalador pergunta qual distribuição instalar e valida se corresponde à que está rodando.
+
+Em resumo, o instalador:
+
+- **Arch**: instala `yay` (se necessário) e pacotes via AUR;
+- **Fedora**: ativa COPR `solopasha/hyprland` e instala pacotes via `dnf`;
+- copia `src/config/*` para `~/.config`;
+- cria backup dos diretórios existentes em `~/.config/*.bak.DATA`;
+- copia `src/fonts` para `~/.local/share/fonts`;
+- atualiza cache de fontes;
+- adiciona `~/.config/term/options.sh` ao shell;
+- aplica Firefox como navegador padrão e tema GTK escuro.
+
+> **Fedora**: `hyprshutdown` é compilado do fonte, `rofi-calc` é substituído por `qalculate-gtk`.
+
+## Estrutura
+
+```text
+src/
+  config/
+    hypr/                Hyprland, Hyprpaper, Hypridle, Hyprlock, scripts, docs
+    waybar/              Barra superior, painel sysinfo, estilos e scripts
+    quickshell/          Sidebar direita em QML/Quickshell (10 cards)
+    rofi/                Launcher, seletor de temas, menus, scripts
+    wofi/                Launcher alternativo
+    wlogout/             Tela de logout
+    kitty/               Terminal principal com suporte a temas
+    foot/                Terminal alternativo
+    yazi/                File manager TUI com flavors e keymaps custom
+    dunst/               Notificações com regras por aplicativo
+    btop/ bottom/        Monitores de sistema com temas
+    snappy-switcher/     Alternância de janelas Alt+Tab
+    environment.d/       Variáveis de ambiente Wayland
+    term/                Opções compartilhadas do shell
+    gtk-3.0/ gtk-4.0/    Temas e configurações GTK3/GTK4
+    my-environment/      Tema ativo, bootstrap e biblioteca shell (sh/)
+  fonts/                 Font Awesome e Terminus local
+```
+
+## Configurações importantes
+
+### Teclado e idioma
+
+Layout `br,us`, variante `abnt2` e alternância com `Alt+Shift`. Suporte bilíngue Português/Inglês.
+
+### Sessão Wayland
+
+Variáveis em `environment.d/wayland.conf` priorizam execução nativa Wayland para Qt, Firefox, Electron, SDL2, Java e LibreOffice.
+
+### Autostart
+
+Ao iniciar o Hyprland, `init.sh --started` sobe:
+
+- `hyprpaper`, `hypridle`
+- Waybar superior + Waybar sysinfo
+- `qs -c sidebar-right` (Quickshell sidebar)
+- `dunst`, `snappy-switcher --daemon`
+- `cliphist` watchers (texto e imagem)
+- `polkit-gnome-authentication-agent-1`
+
+### Login via TTY
+
+`src/config/profile` serve como referência para iniciar Hyprland do TTY1 com logs em `~/.local/state/hyprland`.
+
+### XWayland
+
+`xwayland.enabled = false`. Se precisar, ative em `hyprland.lua`.
+
+### Wallpaper e lockscreen
+
+Wallpapers em `src/config/hypr/wallpapers/`. O lockscreen usa o wallpaper com blur gerado por ImageMagick.
 
 ## Licença
 
