@@ -54,12 +54,12 @@ case "${LANG:-}${LC_ALL:-}" in
 esac
 
 if [ -t 1 ]; then
-  MSG_COLOR_CYAN="\033[0;36m"
-  MSG_COLOR_MAGENTA="\033[0;35m"
-  MSG_COLOR_GREEN="\033[0;32m"
-  MSG_COLOR_YELLOW="\033[0;33m"
-  MSG_COLOR_RED="\033[0;31m"
-  MSG_COLOR_RESET="\033[0m"
+  MSG_COLOR_CYAN="$(printf '\033[0;36m')"
+  MSG_COLOR_MAGENTA="$(printf '\033[0;35m')"
+  MSG_COLOR_GREEN="$(printf '\033[0;32m')"
+  MSG_COLOR_YELLOW="$(printf '\033[0;33m')"
+  MSG_COLOR_RED="$(printf '\033[0;31m')"
+  MSG_COLOR_RESET="$(printf '\033[0m')"
 else
   MSG_COLOR_CYAN=""
   MSG_COLOR_MAGENTA=""
