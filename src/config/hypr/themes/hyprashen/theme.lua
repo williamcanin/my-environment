@@ -1,8 +1,8 @@
 -- Theme: hyprashen
 return {
-  border_active          = "rgba(444444ff)",
+  border_active          = "rgba(757575ff)",
   border_inactive        = "rgba(222222ff)",
-  groupbar_active        = "rgba(444444ff)",
+  groupbar_active        = "rgba(757575ff)",
   groupbar_inactive      = "rgba(222222cc)",
   shadow_color           = 0xcc000000,
   shadow_color_inactive  = 0x66000000,
