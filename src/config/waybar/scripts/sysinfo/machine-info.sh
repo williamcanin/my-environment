@@ -23,12 +23,12 @@ GPU=$(lspci | awk -F': ' '
 
 TEXT=$(
 cat <<EOF
-<span foreground='#3aa99f'>OS:</span>       $OS
-<span foreground='#3aa99f'>Kernel:</span>   $KERNEL
-<span foreground='#3aa99f'>Locale:</span>   $LOCALE
-<span foreground='#3aa99f'>Uptime:</span>   $UPTIME
-<span foreground='#3aa99f'>CPU:</span>      $CPU
-<span foreground='#3aa99f'>GPU:</span>      $GPU
+<span>OS:</span>       $OS
+<span>Kernel:</span>   $KERNEL
+<span>Locale:</span>   $LOCALE
+<span>Uptime:</span>   $UPTIME
+<span>CPU:</span>      $CPU
+<span>GPU:</span>      $GPU
 EOF
 )
 
