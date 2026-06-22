@@ -42,8 +42,8 @@ jobs:
         # current ownership; `install -D` creates parent dirs and sets the mode
         # in one atomic step.
         run: |
-          test -f .github/workflows/setup.sh
-          sudo install -D -m 0755 .github/workflows/setup.sh ./_site/setup.sh
+          test -f .tools/setup.sh
+          sudo install -D -m 0755 .tools/setup.sh ./_site/setup.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
