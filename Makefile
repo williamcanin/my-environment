@@ -4,7 +4,7 @@ REMOTES := $(shell git remote)
 
 .DEFAULT_GOAL := help
 
-.PHONY: help help-dev upgrade install uninstall version push push-lease
+.PHONY: help upgrade install uninstall version push push-lease
 
 # ----- Menu help -----
 help:
@@ -14,10 +14,6 @@ help:
 	@echo "  uninstall    Uninstall (add ARGS='--dry-run' to preview)"
 	@echo "  version      Show version"
 	@echo "  help         This message"
-	@echo "  help-dev     Show development commands"
-
-help-dev:
-	@sh .tools/setup.sh --help-dev
 
 # ----- Installation/Upgrade (user commands) -----
 upgrade:
