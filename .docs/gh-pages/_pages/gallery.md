@@ -37,6 +37,78 @@ permalink: /gallery/
 </div>
 
 <div class="theme-block">
+<h2>Blasphemous - Penitent</h2>
+<p class="theme-type">Monocromático preto + #e0e0e0</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous - Fragment Of Guilt</h2>
+<p class="theme-type">Escuro olive/teal</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous - Kneeling Stone</h2>
+<p class="theme-type">Escuro roxo (Catppuccin-like)</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous - Requiem Aeternam</h2>
+<p class="theme-type">Monocromático preto + #ba8540</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous - Ten Piedad</h2>
+<p class="theme-type">Escuro terroso/warm</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous II - Mea Culpa</h2>
+<p class="theme-type">Escuro warm neutro</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous II - Repose Of The Silent One</h2>
+<p class="theme-type">Escuro teal/azulado</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous II - Red Forest</h2>
+<p class="theme-type">Claro bege/cinza</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>Blasphemous II - The Third Sin</h2>
+<p class="theme-type">Escuro navy/teal</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
 <h2>Blasphemous - Echoes Of Salt</h2>
 <p class="theme-type">Escuro teal/cyan</p>
 <div class="thumb-grid">
