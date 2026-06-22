@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# shellcheck disable=SC1091,SC2086,SC2034,SC2016,SC2317
+# shellcheck disable=SC1091,SC2086,SC2034,SC2016,SC2317,SC2329
 #
 # setup.sh — Single-file installer/uninstaller for my-environment
 #
@@ -33,7 +33,7 @@ set -e
 # ============================================================================
 # VERSION
 # ============================================================================
-VERSION="0.2.0 (Blasphemous)"
+SCRIPT_VERSION="0.2.0 (Blasphemous)"
 
 # ============================================================================
 # MESSAGE FUNCTIONS
@@ -371,7 +371,7 @@ settings() {
 create_lock() {
   mkdir -p "$(dirname "$LOCK_FILE")"
   printf '%s\n' "Installed on: $(date)" > "$LOCK_FILE"
-  printf '%s\n' "Version: $VERSION" >> "$LOCK_FILE"
+  printf '%s\n' "Version: $SCRIPT_VERSION" >> "$LOCK_FILE"
   ok "Installation locked."
 }
 
@@ -582,7 +582,7 @@ pull() {
     return 0
   fi
   git merge --ff-only FETCH_HEAD || die "Failed to apply updates."
-  ok "Updated to version: $VERSION."
+  ok "Updated to version: $SCRIPT_VERSION."
 }
 
 # ============================================================================
@@ -646,7 +646,7 @@ remote_install() {
   need_cmd make
   need_cmd mktemp
 
-  version_arg="${VERSION:-}"
+  version_arg="${SETUP_VERSION:-}"
   [ $# -gt 0 ] && version_arg="$1"
 
   if [ -n "$version_arg" ]; then
@@ -1063,7 +1063,8 @@ PURGE_PACKAGES=false
 WORKDIR=""
 
 # Determine if running from local repo or piped via curl
-SCRIPT_DIR="$(cd "$(dirname "$0")" 2>/dev/null && pwd 2>/dev/null || pwd)"
+dir="$(dirname "$0" 2>/dev/null)" || dir="."
+SCRIPT_DIR="$(cd "$dir" 2>/dev/null && pwd 2>/dev/null || pwd)"
 
 if [ -f "$SCRIPT_DIR/src/config/my-environment/.my-environment-bootstrap" ] || \
    [ -f "$(pwd)/src/config/my-environment/.my-environment-bootstrap" ]; then
@@ -1075,6 +1076,23 @@ if [ -f "$SCRIPT_DIR/src/config/my-environment/.my-environment-bootstrap" ] || \
   fi
   fix_home_for_root
   init_paths
+fi
+
+# Normalize: when remote and $@ is empty, the arg may be in $0
+# (e.g. sh -c "$(curl ...)" --releases  sets  $0=--releases)
+if [ "$LOCAL_MODE" = false ] && [ $# -eq 0 ]; then
+  case "${0:-}" in
+    --releases|-l|--help|-h|--version|--install|--upgrade|--uninstall)
+      set -- "$0"
+      ;;
+    sh|bash|dash|zsh|/tmp/*)
+      # $0 is the shell or a temp path — no real args
+      ;;
+    *)
+      # Looks like a version tag
+      set -- "$0"
+      ;;
+  esac
 fi
 
 # Parse arguments
@@ -1146,7 +1164,7 @@ case "${1:-}" in
     copyright
     ;;
   --version)
-    plain "Version: $VERSION" "\n"
+    plain "Version: $SCRIPT_VERSION" "\n"
     ;;
   # --- Positional: version tag (remote) or error (local) ---
   "")
