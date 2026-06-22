@@ -6,10 +6,10 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-. "$SCRIPT_DIR/libs/version.lib"
-. "$SCRIPT_DIR/libs/msg.lib"
-. "$SCRIPT_DIR/libs/help.lib"
-. "$SCRIPT_DIR/libs/copyright.lib"
+. "$SCRIPT_DIR/libs/version.sh"
+. "$SCRIPT_DIR/libs/msg.sh"
+. "$SCRIPT_DIR/libs/help.sh"
+. "$SCRIPT_DIR/libs/copyright.sh"
 
 select_distro() {
   printf "\n" >&2

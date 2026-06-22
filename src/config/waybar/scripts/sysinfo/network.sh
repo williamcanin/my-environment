@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 get_default_iface() {
   ip route 2>/dev/null |

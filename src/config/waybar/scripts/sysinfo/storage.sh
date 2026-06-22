@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 get_mount_info() {
   mount="$1"

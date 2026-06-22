@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 OS=$(grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2- | tr -d '"')
 LOCALE=$(locale | awk -F= '/^LANG=/{print $2}')

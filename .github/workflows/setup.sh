@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
-# install.sh — my-environment installer via GitHub Releases
+# setup.sh — my-environment installer via GitHub Releases
 #
 # Usage (recommended — required if "make install" prompts for input,
 # e.g. distribution selection):
-#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)"
-#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- 0.1.1
-#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- --releases
+#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)"
+#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- 0.1.1
+#   sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- --releases
 #
 # Usage (pipe form — only safe for fully non-interactive installs):
-#   curl -fsSL https://williamcanin.github.io/my-environment/install.sh | sh
-#   curl -fsSL https://williamcanin.github.io/my-environment/install.sh | sh -s -- 0.1.1
+#   curl -fsSL https://williamcanin.github.io/my-environment/setup.sh | sh
+#   curl -fsSL https://williamcanin.github.io/my-environment/setup.sh | sh -s -- 0.1.1
 #
 # Why it matters: with "curl ... | sh", the script's stdin is the pipe
 # carrying the script source itself, so any interactive "read" further down
@@ -63,22 +63,22 @@ usage() {
 ${NAME} — installer via GitHub Releases
 
 Usage:
-  install.sh                  Install the latest release
-  install.sh VERSION          Install a specific version (e.g.: 0.1.1 or v0.1.1)
-  install.sh -l, --releases   List available releases
-  install.sh -h, --help       Show this help
+  setup.sh                  Install the latest release
+  setup.sh VERSION          Install a specific version (e.g.: 0.1.1 or v0.1.1)
+  setup.sh -l, --releases   List available releases
+  setup.sh -h, --help       Show this help
 
 Recommended (works with interactive prompts, e.g. distro selection):
-  sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)"
-  sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)" -- 0.1.1
-  sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)" -- --releases
+  sh -c "\$(curl -fsSL ${SITE_URL}/setup.sh)"
+  sh -c "\$(curl -fsSL ${SITE_URL}/setup.sh)" -- 0.1.1
+  sh -c "\$(curl -fsSL ${SITE_URL}/setup.sh)" -- --releases
 
 Pipe form (only safe for non-interactive installs):
-  curl -fsSL ${SITE_URL}/install.sh | sh
-  curl -fsSL ${SITE_URL}/install.sh | sh -s -- 0.1.1
+  curl -fsSL ${SITE_URL}/setup.sh | sh
+  curl -fsSL ${SITE_URL}/setup.sh | sh -s -- 0.1.1
 
 Either form also accepts:
-  VERSION=0.1.1 sh -c "\$(curl -fsSL ${SITE_URL}/install.sh)"
+  VERSION=0.1.1 sh -c "\$(curl -fsSL ${SITE_URL}/setup.sh)"
 EOF
 }
 
@@ -204,7 +204,7 @@ main() {
   if [ ! -t 0 ]; then
     warn "stdin is not a terminal — if 'make install' needs to prompt for input"
     warn "(e.g. distribution selection), it won't be able to read your answer."
-    warn "Re-run using: sh -c \"\$(curl -fsSL ${SITE_URL}/install.sh)\" instead of '| sh'."
+    warn "Re-run using: sh -c \"\$(curl -fsSL ${SITE_URL}/setup.sh)\" instead of '| sh'."
   fi
   if [ -n "$REAL_USER" ]; then
     sudo -u "$REAL_USER" env HOME="$REAL_HOME" make -C "$extracted_dir" install || die "Failed to run 'make install'."

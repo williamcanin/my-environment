@@ -23,19 +23,19 @@ permalink: /install/
 **Instalação online (RECOMENDADO):**
 
 ```sh
-sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)"
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)"
 ```
 
 Liste as versões disponíveis:
 
 ```sh
-sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- --releases
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- --releases
 ```
 
 Instalar uma versão específica:
 
 ```sh
-sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)" -- 0.1.0
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- 0.1.0
 ```
 
 **Instalação offline:**

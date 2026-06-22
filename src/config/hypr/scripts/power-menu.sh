@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 do_lock() {
   if [ "$WALLPAPER_PATH" -nt "$HYPRLOCK_PATH" ]; then

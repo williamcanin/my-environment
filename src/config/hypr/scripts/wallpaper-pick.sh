@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 WALLPAPERS_DIR="${HOME}/.config/hypr/wallpapers"
 SELECTED_FILE=$(mktemp)

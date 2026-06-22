@@ -35,15 +35,15 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Copy install.sh into the site
+      - name: Copy setup.sh into the site
         # actions/jekyll-build-pages runs Jekyll inside a Docker container as root,
         # so ./_site ends up owned by root while this step runs as the regular
         # runner user. Use sudo on the write itself so it works regardless of
         # current ownership; `install -D` creates parent dirs and sets the mode
         # in one atomic step.
         run: |
-          test -f .github/workflows/install.sh
-          sudo install -D -m 0755 .github/workflows/install.sh ./_site/install.sh
+          test -f .github/workflows/setup.sh
+          sudo install -D -m 0755 .github/workflows/setup.sh ./_site/setup.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 if locale_is_pt; then
   CHEAT_FILE="$HOME/.config/kitty/docs/shortcuts/pt.txt"

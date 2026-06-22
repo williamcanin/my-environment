@@ -29,7 +29,7 @@ O visual combina **Hyprland** com bordas discretas, blur, sombras, wallpaper, te
 ## Instalação rápida
 
 ```sh
-sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)"
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)"
 ```
 
 Versões específicas, instalação offline e demais detalhes: veja [Instalação]({{ '/install/' | relative_url }}).

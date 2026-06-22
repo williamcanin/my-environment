@@ -5,7 +5,7 @@
 # bootstrap.sh — Carrega automaticamente todos os módulos compartilhados.
 #
 # Uso em scripts:
-#   . "${HOME}/.config/.environment-bootstrap"
+#   . "${HOME}/.config/.my-environment-bootstrap"
 #
 # Isso disponibiliza todas as APIs (log_*, string_*, json_*, ...)
 # e variáveis globais (WALLPAPER_PATH, BUTTON_LAYOUT, ...).

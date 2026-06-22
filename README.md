@@ -23,7 +23,7 @@ painel lateral de informações do sistema e uma sidebar na direita com Quickshe
 ## Instalação rápida
 
 ```sh
-sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/install.sh)"
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)"
 ```
 
 Versões específicas, instalação offline e demais detalhes: veja [Instalação](https://williamcanin.github.io/my-environment/install/).

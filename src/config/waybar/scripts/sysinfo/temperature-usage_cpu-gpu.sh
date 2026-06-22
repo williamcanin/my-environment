@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # shellcheck disable=SC1091
-. "$HOME/.config/.environment-bootstrap"
+. "$HOME/.config/.my-environment-bootstrap"
 
 GPU_SCRIPT="$(paths_config "waybar/scripts/sysinfo/gpu.sh")"
 

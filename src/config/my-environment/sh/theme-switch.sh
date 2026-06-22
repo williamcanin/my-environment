@@ -3,7 +3,7 @@
 # Usage: theme-switch <theme-name>
 # shellcheck disable=SC1091
 
-. "${HOME}/.config/.environment-bootstrap"
+. "${HOME}/.config/.my-environment-bootstrap"
 
 THEME="${1:-}"
 ACTIVE_FILE="${HOME}/.config/my-environment/.active-theme"
