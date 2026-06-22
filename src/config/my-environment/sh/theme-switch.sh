@@ -11,7 +11,7 @@ ACTIVE_FILE="${HOME}/.config/my-environment/.active-theme"
 if [ -z "$THEME" ]; then
   THEME=$(
     rofi -dmenu -p "   Select Theme" -i -theme-str 'listview {lines: 12;}' <<'EOF'
-01 - Minimal
+01 - HyprSlate
 02 - HyprAshen
 03 - Blasphemous - Penitent
 04 - Blasphemous - Echoes Of Salt
@@ -29,7 +29,7 @@ EOF
   [ -z "$THEME" ] && exit 0
 
   case "$THEME" in
-    "01 - Minimal")                               THEME="minimal" ;;
+    "01 - HyprSlate")                             THEME="hyprslate" ;;
     "02 - HyprAshen")                             THEME="hyprashen" ;;
     "03 - Blasphemous - Penitent")                THEME="blasphemous-penitent" ;;
     "04 - Blasphemous - Echoes Of Salt")          THEME="blasphemous-echoes-of-salt" ;;
@@ -85,7 +85,7 @@ _waybar_cfg="$(paths_config waybar/config.jsonc)"
 _sysinfo_css="$(paths_config waybar/sysinfo.css)"
 
 case "$THEME" in
-  minimal | hyprashen)
+  hyprslate | hyprashen)
     sed -i "s|\"margin-top\": [0-9]*|\"margin-top\": 0|" "$_waybar_cfg"
     sed -i "s|\"margin-left\": [0-9]*|\"margin-left\": 0|" "$_waybar_cfg"
     sed -i "s|\"margin-right\": [0-9]*|\"margin-right\": 0|" "$_waybar_cfg"
@@ -188,7 +188,7 @@ for _ext in jpeg jpg png webp; do
 done
 
 # Generate solid-color wallpaper for themes without an image
-if [ "$THEME" = "minimal" ]; then
+if [ "$THEME" = "hyprslate" ]; then
   _solid="${HYPRPAPER_DIR}/${THEME}.png"
   if [ ! -f "$_solid" ]; then
     if command -v magick >/dev/null 2>&1; then

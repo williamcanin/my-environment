@@ -1,4 +1,4 @@
-/* theme: minimal */
+/* theme: hyprslate */
 * {
     th-bg:            rgba(47, 53, 65, 100%);
     th-fg:            rgb(166, 184, 196);

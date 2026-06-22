@@ -1,4 +1,4 @@
-@import "~/.config/rofi/themes/minimal/theme.rasi"
+@import "~/.config/rofi/themes/hyprslate/theme.rasi"
 
 /* Author: William C. Canin */
 

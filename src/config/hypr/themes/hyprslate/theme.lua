@@ -1,4 +1,4 @@
--- Theme: minimal
+-- Theme: hyprslate
 return {
   border_active          = "rgba(7492A7ff)",
   border_inactive        = "rgba(3B4352ff)",
