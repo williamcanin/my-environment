@@ -73,7 +73,7 @@ A sidebar carrega o tema dinamicamente — ao trocar o tema, as cores são atual
 | `string.sh` | Utilitários de string (barra de progresso) |
 | `json.sh` | Escape e saída JSON para Waybar |
 | `hypr.sh` | Parse de caminhos do Hyprland |
-| `theme-switch.sh` | Alternância completa de temas |
+| `theme-switch.sh` | Alternância completa de temas (symlink: `theme-switch`) |
 
 ## Atalhos principais
 

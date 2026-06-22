@@ -35,34 +35,37 @@ sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- 
 Instalar uma versão específica:
 
 ```sh
-sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- 0.1.0
+sh -c "$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- 0.2.0
 ```
 
-**Instalação offline:**
+**Instalação offline (a partir do repositório clonado):**
 
 ```sh
-git clone --depth=1 https://github.com/williamcanin/my-environment.git && cd my-environment && make install
+git clone --depth=1 https://github.com/williamcanin/my-environment.git && cd my-environment && sh .tools/setup.sh --install
 ```
 
-> Nota: Essa forma de instalação é `INSTÁVEL` porque ela faz a instalação usando a branch, o que pode conter arquivos com bugs por falta de revisão, por isso é sempre recomendado instalar sempre a opção `RECOMENDADA` que usa as releases estáveis e as versões revisadas.
+> Nota: Essa forma de instalação é `INSTÁVEL` porque usa a branch principal, que pode conter arquivos com bugs por falta de revisão. Prefira sempre a opção `RECOMENDADA` que usa releases estáveis.
 >
-> Se você guardar o repo git, sempre execute o comando abaixo para atualizar antes de usar o `make install`:
+> Se você mantiver o repositório, atualize antes de instalar:
 
 ```sh
-make upgrade
+sh .tools/setup.sh --upgrade
 ```
 
 Comandos úteis no modo offline:
 
 ```sh
-make help
-make version
+make help          # ou: sh .tools/setup.sh --help
+make version       # ou: sh .tools/setup.sh --version
+make install       # ou: sh .tools/setup.sh --install
+make upgrade       # ou: sh .tools/setup.sh --upgrade
+make uninstall     # ou: sh .tools/setup.sh --uninstall
 make set-permissions
-make install
-make upgrade
 ```
 
-O instalador pergunta qual distribuição instalar e valida se corresponde à que está rodando.
+O instalador detecta automaticamente a distribuição via `/etc/os-release` — sem necessidade de seleção manual.
+
+Na instalação remota (`sh -c "$(curl ...)"`), o instalador também verifica o shell padrão do usuário e oferece trocar para `/usr/bin/zsh` se necessário.
 
 Em resumo, o instalador:
 

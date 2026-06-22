@@ -30,7 +30,7 @@ src/
     environment.d/       Variáveis de ambiente Wayland
     term/                Opções compartilhadas do shell
     gtk-3.0/ gtk-4.0/    Temas e configurações GTK3/GTK4
-    my-environment/      Tema ativo, bootstrap e biblioteca shell (sh/)
+    my-environment/      Tema ativo, .my-environment-bootstrap e biblioteca shell (sh/)
   fonts/                 Font Awesome e Terminus local
 ```
 
@@ -57,7 +57,7 @@ Ao iniciar o Hyprland, `init.sh --started` sobe:
 
 ### Login via TTY
 
-`src/config/my-environment/profile` serve como referência para iniciar Hyprland do TTY1 com logs em `~/.local/state/hyprland`.
+`src/config/my-environment/.my-environment-bootstrap` é o ponto de entrada único (instalado em `~/.config/.my-environment-bootstrap`) que carrega a biblioteca shell. O script `.tools/setup.sh` é o instalador/uninstaller único, compatível com os comandos do Makefile e com instalação remota via `curl | sh`.
 
 ### XWayland
 

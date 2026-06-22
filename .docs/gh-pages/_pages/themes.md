@@ -45,10 +45,10 @@ Veja o preview de cada tema na [Galeria de Temas]({{ '/gallery/' | relative_url 
 
 ```sh
 # Com seletor Rofi (menu interativo)
-my-environment-theme
+theme-switch
 
 # Ou diretamente pelo nome
-my-environment-theme blasphemous-echoes-of-salt
+theme-switch blasphemous-echoes-of-salt
 ```
 
 O tema ativo é armazenado em:
@@ -80,8 +80,8 @@ src/config/yazi/themes/<theme>/theme.toml          # Flavor do file manager
 Cada tema possui um wallpaper correspondente em `src/config/hypr/wallpapers/`:
 
 ```text
-hyprslate.png
-hyprashen.png (symlink)
+hyprslate.png     (gerado dinamicamente pelo theme-switch.sh via ImageMagick)
+hyprashen.png     (symlink)
 blasphemous-echoes-of-salt.jpeg
 blasphemous-fragment-of-guilt.png
 blasphemous-kneeling-stone.png
