@@ -11,8 +11,8 @@ ACTIVE_FILE="${HOME}/.config/my-environment/.active-theme"
 if [ -z "$THEME" ]; then
   THEME=$(
     rofi -dmenu -p "   Select Theme" -i -theme-str 'listview {lines: 12;}' <<'EOF'
-01 - HyprSlate
-02 - HyprAshen
+01 - HyprAshen
+02 - HyprSlate
 03 - Blasphemous - Penitent
 04 - Blasphemous - Echoes Of Salt
 05 - Blasphemous - Fragment Of Guilt
@@ -29,8 +29,8 @@ EOF
   [ -z "$THEME" ] && exit 0
 
   case "$THEME" in
-    "01 - HyprSlate")                             THEME="hyprslate" ;;
-    "02 - HyprAshen")                             THEME="hyprashen" ;;
+    "01 - HyprAshen")                             THEME="hyprashen" ;;
+    "02 - HyprSlate")                             THEME="hyprslate" ;;
     "03 - Blasphemous - Penitent")                THEME="blasphemous-penitent" ;;
     "04 - Blasphemous - Echoes Of Salt")          THEME="blasphemous-echoes-of-salt" ;;
     "05 - Blasphemous - Fragment Of Guilt")       THEME="blasphemous-fragment-of-guilt" ;;
@@ -89,6 +89,7 @@ case "$THEME" in
     sed -i "s|\"margin-top\": [0-9]*|\"margin-top\": 0|" "$_waybar_cfg"
     sed -i "s|\"margin-left\": [0-9]*|\"margin-left\": 0|" "$_waybar_cfg"
     sed -i "s|\"margin-right\": [0-9]*|\"margin-right\": 0|" "$_waybar_cfg"
+    sed -i "s|\"margin-bottom\": -\?[0-9]*|\"margin-bottom\": 3|" "$_waybar_cfg"
     sed -i '/^window#waybar {/,/^}/s/border-radius: [0-9]*px;/border-radius: 0px;/' "$(paths_config waybar/style.css)"
     sed -i '/^#workspaces button$/,/^}/s/border-radius: [0-9]*px;/border-radius: 0px;/' "$(paths_config waybar/style.css)"
     sed -i '/^#workspaces button\.active,/,/^}/s/border-radius: [0-9]*px;/border-radius: 0px;/' "$(paths_config waybar/style.css)"
@@ -103,6 +104,7 @@ case "$THEME" in
     sed -i "s|\"margin-top\": [0-9]*|\"margin-top\": 5|" "$_waybar_cfg"
     sed -i "s|\"margin-left\": [0-9]*|\"margin-left\": 20|" "$_waybar_cfg"
     sed -i "s|\"margin-right\": [0-9]*|\"margin-right\": 20|" "$_waybar_cfg"
+    sed -i "s|\"margin-bottom\": -\?[0-9]*|\"margin-bottom\": -8|" "$_waybar_cfg"
     sed -i '/^window#waybar {/,/^}/s/border-radius: [0-9]*px;/border-radius: 4px;/' "$(paths_config waybar/style.css)"
     sed -i '/^#workspaces button$/,/^}/s/border-radius: [0-9]*px;/border-radius: 5px;/' "$(paths_config waybar/style.css)"
     sed -i '/^#workspaces button\.active,/,/^}/s/border-radius: [0-9]*px;/border-radius: 4px;/' "$(paths_config waybar/style.css)"
