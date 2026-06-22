@@ -21,6 +21,22 @@ permalink: /gallery/
 -->
 
 <div class="theme-block">
+<h2>HyprSlate</h2>
+<p class="theme-type">Plano escuro ardósia, flat (sem bordas arredondadas)</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
+<h2>HyprAshen</h2>
+<p class="theme-type">Plano escuro cinza, flat (sem bordas arredondadas)</p>
+<div class="thumb-grid">
+<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+</div>
+</div>
+
+<div class="theme-block">
 <h2>Blasphemous - Echoes Of Salt</h2>
 <p class="theme-type">Escuro teal/cyan</p>
 <div class="thumb-grid">

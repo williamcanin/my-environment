@@ -22,7 +22,7 @@ permalink: /features/
 - Screenshots com `hyprshot` e edição de região com `satty`.
 - Gravação de tela com `gpu-screen-recorder`, pausa/retomada e status na Waybar.
 - Bloqueio com `hyprlock`, wallpaper desfocado gerado por `magick`, idle via `hypridle` e tela de logout com `wlogout`.
-- Sistema completo de temas com 10 variações temáticas inspiradas em *Blasphemous*.
+- Sistema completo de temas com 12 variações temáticas (HyprSlate, HyprAshen e 10 inspiradas em *Blasphemous*).
 - Wofi como launcher alternativo ao Rofi.
 - `my-environment/sh/` — biblioteca shell compartilhada com funções de logging, locale, notificações, JSON, manipulação de strings e caminhos.
 - Áudio via PipeWire/WirePlumber, controle por `wpctl`, `pamixer` e `pwvucontrol`.

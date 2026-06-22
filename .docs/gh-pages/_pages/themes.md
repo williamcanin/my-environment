@@ -8,7 +8,7 @@ permalink: /themes/
 
 # Temas
 
-O projeto possui **10 temas** inspirados na série *Blasphemous* e *Blasphemous II*, com suporte completo a:
+O projeto possui **12 temas** (HyprSlate, HyprAshen + 10 inspirados na série *Blasphemous* e *Blasphemous II*), com suporte completo a:
 
 - Hyprland (bordas, sombras, gaps)
 - Waybar (barra superior + sysinfo)
@@ -26,16 +26,18 @@ O projeto possui **10 temas** inspirados na série *Blasphemous* e *Blasphemous 
 
 | # | Tema | Tipo |
 | --- | --- | --- |
-| 01 | Blasphemous - Penitent | Monocromático preto + `#e0e0e0` |
-| 02 | Blasphemous - Echoes Of Salt | Escuro teal/cyan |
-| 03 | Blasphemous - Fragment Of Guilt | Escuro olive/teal |
-| 04 | Blasphemous - Kneeling Stone | Escuro roxo (Catppuccin-like) |
-| 05 | Blasphemous - Requiem Aeternam | Monocromático preto + `#ba8540` |
-| 06 | Blasphemous - Ten Piedad | Escuro terroso/warm |
-| 07 | Blasphemous II - Mea Culpa | Escuro warm neutro |
-| 08 | Blasphemous II - Repose Of The Silent One | Escuro teal/azulado |
-| 09 | Blasphemous II - Red Forest | Claro bege/cinza |
-| 10 | Blasphemous II - The Third Sin | Escuro navy/teal |
+| 01 | HyprSlate | Plano escuro ardósia (`#2F3541`) + texto `#A6B8C4` |
+| 02 | HyprAshen | Plano escuro cinza (`#181818`) + texto `#757575` |
+| 03 | Blasphemous - Penitent | Monocromático preto + `#e0e0e0` |
+| 04 | Blasphemous - Echoes Of Salt | Escuro teal/cyan |
+| 05 | Blasphemous - Fragment Of Guilt | Escuro olive/teal |
+| 06 | Blasphemous - Kneeling Stone | Escuro roxo (Catppuccin-like) |
+| 07 | Blasphemous - Requiem Aeternam | Monocromático preto + `#ba8540` |
+| 08 | Blasphemous - Ten Piedad | Escuro terroso/warm |
+| 09 | Blasphemous II - Mea Culpa | Escuro warm neutro |
+| 10 | Blasphemous II - Repose Of The Silent One | Escuro teal/azulado |
+| 11 | Blasphemous II - Red Forest | Claro bege/cinza |
+| 12 | Blasphemous II - The Third Sin | Escuro navy/teal |
 
 Veja o preview de cada tema na [Galeria de Temas]({{ '/gallery/' | relative_url }}).
 
@@ -78,6 +80,8 @@ src/config/yazi/themes/<theme>/theme.toml          # Flavor do file manager
 Cada tema possui um wallpaper correspondente em `src/config/hypr/wallpapers/`:
 
 ```text
+hyprslate.png
+hyprashen.png (symlink)
 blasphemous-echoes-of-salt.jpeg
 blasphemous-fragment-of-guilt.png
 blasphemous-kneeling-stone.png
