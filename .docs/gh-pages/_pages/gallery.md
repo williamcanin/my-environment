@@ -153,8 +153,56 @@ permalink: /gallery/
 <h2>Blasphemous - Penitent</h2>
 <p class="theme-type">Monocromático preto + #e0e0e0</p>
 <div class="thumb-grid">
-<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+<a href="#blasphemous-penitent-1" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-penitent/preview-1.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 1" loading="lazy"></a>
+<a href="#blasphemous-penitent-2" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-penitent/preview-2.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 2" loading="lazy"></a>
+<a href="#blasphemous-penitent-3" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-penitent/preview-3.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 3" loading="lazy"></a>
+<a href="#blasphemous-penitent-4" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-penitent/preview-4.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 4" loading="lazy"></a>
+<a href="#blasphemous-penitent-5" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-penitent/preview-5.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 5" loading="lazy"></a>
+<a href="#blasphemous-penitent-6" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-penitent/preview-6.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 6" loading="lazy"></a>
 </div>
+</div>
+
+<div class="lightbox" id="blasphemous-penitent-1">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-penitent-6" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-penitent/preview-1.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 1">
+<a href="#blasphemous-penitent-2" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">1 / 6</span>
+</div>
+<div class="lightbox" id="blasphemous-penitent-2">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-penitent-1" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-penitent/preview-2.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 2">
+<a href="#blasphemous-penitent-3" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">2 / 6</span>
+</div>
+<div class="lightbox" id="blasphemous-penitent-3">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-penitent-2" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-penitent/preview-3.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 3">
+<a href="#blasphemous-penitent-4" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">3 / 6</span>
+</div>
+<div class="lightbox" id="blasphemous-penitent-4">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-penitent-3" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-penitent/preview-4.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 4">
+<a href="#blasphemous-penitent-5" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">4 / 6</span>
+</div>
+<div class="lightbox" id="blasphemous-penitent-5">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-penitent-4" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-penitent/preview-5.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 5">
+<a href="#blasphemous-penitent-6" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">5 / 6</span>
+</div>
+<div class="lightbox" id="blasphemous-penitent-6">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-penitent-5" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-penitent/preview-6.png' | relative_url }}" alt="Blasphemous - Penitent, prévia 6">
+<a href="#blasphemous-penitent-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">6 / 6</span>
 </div>
 
 <div class="theme-block">
