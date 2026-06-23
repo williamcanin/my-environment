@@ -26,7 +26,6 @@
 #   make uninstall  -> sh .tools/setup.sh --uninstall [ARGS]
 #   make version    -> sh .tools/setup.sh --version
 #   make help       -> sh .tools/setup.sh --help
-#   make help-dev   -> sh .tools/setup.sh --help-dev
 
 set -e
 
@@ -140,15 +139,15 @@ help() {
   printf "\n"
   log "Shortcuts:" "\n"
   accent "  --help";       plain " -------- This message" "\n"
-  accent "  --help-dev";   plain " ----- Show development commands" "\n"
+  # accent "  --help-dev";   plain " ----- Show development commands" "\n"
 }
 
-help_dev() {
-  help
-  printf "\n"
-  log "Development options:" "\n"
-  accent "  --help-dev";   plain " ---------- This message" "\n"
-}
+# help_dev() {
+#   help
+#   printf "\n"
+#   log "Development options:" "\n"
+#   accent "  --help-dev";   plain " ---------- This message" "\n"
+# }
 
 online_usage() {
   cat <<EOF
@@ -1158,10 +1157,10 @@ case "${1:-}" in
     fi
     copyright
     ;;
-  --help-dev)
-    help_dev
-    copyright
-    ;;
+  # --help-dev)
+  #   help_dev
+  #   copyright
+  #   ;;
   --version)
     plain "Version: $SCRIPT_VERSION" "\n"
     ;;
