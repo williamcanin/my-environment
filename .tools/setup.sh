@@ -127,19 +127,10 @@ r_die()  { printf '%s%s%s\n' "$MSG_COLOR_RED" "$1" "$MSG_COLOR_RESET" >&2; exit 
 # ============================================================================
 help() {
   printf "\n"
-  log "Options (local mode):" "\n"
-  accent "  --install";    plain " ----- Install from local repository" "\n"
-  accent "  --upgrade";    plain " ----- Pull latest and reinstall" "\n"
+  log "Options:" "\n"
+  accent "  --install";    plain " ------ Install from local repository" "\n"
+  accent "  --upgrade";    plain " ------ Pull latest and reinstall" "\n"
   accent "  --uninstall";  plain " ---- Uninstall (add --dry-run to preview)" "\n"
-  printf "\n"
-  log "Options (remote mode — via curl):" "\n"
-  accent "  --releases";   plain " ---- List available versions" "\n"
-  accent "  VERSION";      plain " ------ Install a specific version (e.g. 0.2.0)" "\n"
-  accent "  (no args)";    plain " ---- Install the latest release" "\n"
-  printf "\n"
-  log "Shortcuts:" "\n"
-  accent "  --help";       plain " -------- This message" "\n"
-  # accent "  --help-dev";   plain " ----- Show development commands" "\n"
 }
 
 # help_dev() {
@@ -150,24 +141,14 @@ help() {
 # }
 
 online_usage() {
-  cat <<EOF
-my-environment — installer via GitHub Releases
-
-Usage:
-  setup.sh                  Install the latest release
-  setup.sh VERSION          Install a specific version (e.g.: 0.1.1 or v0.1.1)
-  setup.sh --releases       List available releases
-  setup.sh --help           Show this help
-
-Recommended (works with interactive prompts):
-  sh -c "\$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)"
-  sh -c "\$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- 0.2.0
-  sh -c "\$(curl -fsSL https://williamcanin.github.io/my-environment/setup.sh)" -- --releases
-
-Pipe form (non-interactive only):
-  curl -fsSL https://williamcanin.github.io/my-environment/setup.sh | sh
-  curl -fsSL https://williamcanin.github.io/my-environment/setup.sh | sh -s -- 0.2.0
-EOF
+  printf "\n"
+  log "Options:" "\n"
+  accent "  --releases";   plain " ---- List available versions" "\n"
+  accent "  VERSION";      plain " ------- Install a specific version (e.g. 0.2.0)" "\n"
+  accent "  (no args)";    plain " ---- Install the latest release" "\n"
+  printf "\n"
+  log "Shortcuts:" "\n"
+  accent "  --help";       plain " -------- This message" "\n"
 }
 
 # ============================================================================

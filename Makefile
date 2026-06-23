@@ -8,12 +8,7 @@ REMOTES := $(shell git remote)
 
 # ----- Menu help -----
 help:
-	@echo "my-environment — installation targets:"
-	@echo "  install      Install from local repository"
-	@echo "  upgrade      Pull latest and reinstall"
-	@echo "  uninstall    Uninstall (add ARGS='--dry-run' to preview)"
-	@echo "  version      Show version"
-	@echo "  help         This message"
+	@sh .tools/setup.sh --help
 
 # ----- Installation/Upgrade (user commands) -----
 upgrade:
