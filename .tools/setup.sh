@@ -572,7 +572,7 @@ gh_get() {
 }
 
 extract_tags() {
-  sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p'
+  grep -o '"tag_name":"[^"]*"' | sed 's/"tag_name":"//;s/"//'
 }
 
 list_releases() {
