@@ -279,7 +279,7 @@ permalink: /gallery/
 <a href="#blasphemous-kneeling-stone-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">5 / 5</span>
 </div>
-
+<!--
 <div class="theme-block">
 <h2>Requiem Aeternam</h2>
 <p class="theme-type">Monocromático preto + #ba8540</p>
@@ -287,7 +287,8 @@ permalink: /gallery/
 <p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
 </div>
 </div>
-
+-->
+<!--
 <div class="theme-block">
 <h2>Ten Piedad</h2>
 <p class="theme-type">Escuro terroso/warm</p>
@@ -295,6 +296,7 @@ permalink: /gallery/
 <p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
 </div>
 </div>
+-->
 
 <div class="theme-block">
 <h2>Mea Culpa</h2>
@@ -352,6 +354,7 @@ permalink: /gallery/
 <span class="lightbox-counter">5 / 5</span>
 </div>
 
+<!--
 <div class="theme-block">
 <h2>Red Forest</h2>
 <p class="theme-type">Claro bege/cinza</p>
@@ -359,6 +362,7 @@ permalink: /gallery/
 <p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
 </div>
 </div>
+-->
 
 <div class="theme-block">
 <h2>Blasphemous II - The Third Sin</h2>
