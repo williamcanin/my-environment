@@ -299,11 +299,51 @@ permalink: /gallery/
 -->
 
 <div class="theme-block">
-<h2>Mea Culpa</h2>
+<h2>Blasphemous II - Mea Culpa</h2>
 <p class="theme-type">Escuro warm neutro</p>
 <div class="thumb-grid">
-<p style="grid-column:1/-1;color:#888;font-style:italic;">Prévias em breve.</p>
+<a href="#blasphemous-mea-culpa-1" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-1.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 1" loading="lazy"></a>
+<a href="#blasphemous-mea-culpa-2" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-2.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 2" loading="lazy"></a>
+<a href="#blasphemous-mea-culpa-3" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-3.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 3" loading="lazy"></a>
+<a href="#blasphemous-mea-culpa-4" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-4.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 4" loading="lazy"></a>
+<a href="#blasphemous-mea-culpa-5" class="thumb"><img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-5.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 5" loading="lazy"></a>
 </div>
+</div>
+
+<div class="lightbox" id="blasphemous-mea-culpa-1">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-mea-culpa-5" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-1.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 1">
+<a href="#blasphemous-mea-culpa-2" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">1 / 5</span>
+</div>
+<div class="lightbox" id="blasphemous-mea-culpa-2">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-mea-culpa-1" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-2.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 2">
+<a href="#blasphemous-mea-culpa-3" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">2 / 5</span>
+</div>
+<div class="lightbox" id="blasphemous-mea-culpa-3">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-mea-culpa-2" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-3.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 3">
+<a href="#blasphemous-mea-culpa-4" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">3 / 5</span>
+</div>
+<div class="lightbox" id="blasphemous-mea-culpa-4">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-mea-culpa-3" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-4.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 4">
+<a href="#blasphemous-mea-culpa-5" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">4 / 5</span>
+</div>
+<div class="lightbox" id="blasphemous-mea-culpa-5">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#blasphemous-mea-culpa-4" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/blasphemous-mea-culpa/preview-5.png' | relative_url }}" alt="Blasphemous II - Mea Culpa, prévia 5">
+<a href="#blasphemous-mea-culpa-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">5 / 5</span>
 </div>
 
 <div class="theme-block">
