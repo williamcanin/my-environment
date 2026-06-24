@@ -22,54 +22,6 @@ permalink: /gallery/
   href de "prev"/"next" de TODAS as imagens daquele tema para manter o loop fechado.
 -->
 
-<div class="theme-block">
-<h2>HyprSlate</h2>
-<p class="theme-type">Plano escuro ardósia, flat (sem bordas arredondadas)</p>
-<div class="thumb-grid">
-<a href="#hyprslate-1" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-1.png' | relative_url }}" alt="HyprSlate, prévia 1" loading="lazy"></a>
-<a href="#hyprslate-2" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-2.png' | relative_url }}" alt="HyprSlate, prévia 2" loading="lazy"></a>
-<a href="#hyprslate-3" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-3.png' | relative_url }}" alt="HyprSlate, prévia 3" loading="lazy"></a>
-<a href="#hyprslate-4" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-4.png' | relative_url }}" alt="HyprSlate, prévia 4" loading="lazy"></a>
-<a href="#hyprslate-5" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-5.png' | relative_url }}" alt="HyprSlate, prévia 5" loading="lazy"></a>
-</div>
-</div>
-
-<div class="lightbox" id="hyprslate-1">
-<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
-<a href="#hyprslate-5" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
-<img src="{{ '/assets/images/themes/hyprslate/preview-1.png' | relative_url }}" alt="HyprSlate, prévia 1">
-<a href="#hyprslate-2" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
-<span class="lightbox-counter">1 / 5</span>
-</div>
-<div class="lightbox" id="hyprslate-2">
-<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
-<a href="#hyprslate-1" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
-<img src="{{ '/assets/images/themes/hyprslate/preview-2.png' | relative_url }}" alt="HyprSlate, prévia 2">
-<a href="#hyprslate-3" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
-<span class="lightbox-counter">2 / 5</span>
-</div>
-<div class="lightbox" id="hyprslate-3">
-<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
-<a href="#hyprslate-2" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
-<img src="{{ '/assets/images/themes/hyprslate/preview-3.png' | relative_url }}" alt="HyprSlate, prévia 3">
-<a href="#hyprslate-4" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
-<span class="lightbox-counter">3 / 5</span>
-</div>
-<div class="lightbox" id="hyprslate-4">
-<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
-<a href="#hyprslate-3" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
-<img src="{{ '/assets/images/themes/hyprslate/preview-4.png' | relative_url }}" alt="HyprSlate, prévia 4">
-<a href="#hyprslate-5" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
-<span class="lightbox-counter">4 / 5</span>
-</div>
-<div class="lightbox" id="hyprslate-5">
-<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
-<a href="#hyprslate-4" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
-<img src="{{ '/assets/images/themes/hyprslate/preview-5.png' | relative_url }}" alt="HyprSlate, prévia 5">
-<a href="#hyprslate-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
-<span class="lightbox-counter">5 / 5</span>
-</div>
-
 <h1>Temas neutros</h1>
 
 <div class="theme-block">
@@ -121,6 +73,55 @@ permalink: /gallery/
 <a href="#HyprAshen-4" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
 <img src="{{ '/assets/images/themes/hyprashen/preview-5.png' | relative_url }}" alt="HyprAshen, prévia 5">
 <a href="#HyprAshen-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">5 / 5</span>
+</div>
+
+
+<div class="theme-block">
+<h2>HyprSlate</h2>
+<p class="theme-type">Plano escuro ardósia, flat (sem bordas arredondadas)</p>
+<div class="thumb-grid">
+<a href="#hyprslate-1" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-1.png' | relative_url }}" alt="HyprSlate, prévia 1" loading="lazy"></a>
+<a href="#hyprslate-2" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-2.png' | relative_url }}" alt="HyprSlate, prévia 2" loading="lazy"></a>
+<a href="#hyprslate-3" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-3.png' | relative_url }}" alt="HyprSlate, prévia 3" loading="lazy"></a>
+<a href="#hyprslate-4" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-4.png' | relative_url }}" alt="HyprSlate, prévia 4" loading="lazy"></a>
+<a href="#hyprslate-5" class="thumb"><img src="{{ '/assets/images/themes/hyprslate/preview-5.png' | relative_url }}" alt="HyprSlate, prévia 5" loading="lazy"></a>
+</div>
+</div>
+
+<div class="lightbox" id="hyprslate-1">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#hyprslate-5" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/hyprslate/preview-1.png' | relative_url }}" alt="HyprSlate, prévia 1">
+<a href="#hyprslate-2" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">1 / 5</span>
+</div>
+<div class="lightbox" id="hyprslate-2">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#hyprslate-1" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/hyprslate/preview-2.png' | relative_url }}" alt="HyprSlate, prévia 2">
+<a href="#hyprslate-3" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">2 / 5</span>
+</div>
+<div class="lightbox" id="hyprslate-3">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#hyprslate-2" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/hyprslate/preview-3.png' | relative_url }}" alt="HyprSlate, prévia 3">
+<a href="#hyprslate-4" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">3 / 5</span>
+</div>
+<div class="lightbox" id="hyprslate-4">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#hyprslate-3" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/hyprslate/preview-4.png' | relative_url }}" alt="HyprSlate, prévia 4">
+<a href="#hyprslate-5" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
+<span class="lightbox-counter">4 / 5</span>
+</div>
+<div class="lightbox" id="hyprslate-5">
+<a href="#" class="lightbox-close" aria-label="Fechar">&times;</a>
+<a href="#hyprslate-4" class="lightbox-arrow lightbox-prev" aria-label="Anterior">&#8249;</a>
+<img src="{{ '/assets/images/themes/hyprslate/preview-5.png' | relative_url }}" alt="HyprSlate, prévia 5">
+<a href="#hyprslate-1" class="lightbox-arrow lightbox-next" aria-label="Próxima">&#8250;</a>
 <span class="lightbox-counter">5 / 5</span>
 </div>
 
