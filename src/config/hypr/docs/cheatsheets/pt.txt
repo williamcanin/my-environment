@@ -30,25 +30,26 @@ ATALHO                                 DESCRIÇÃO
 20 - SUPER (Win) + ,                  = Abre/Fecha sidebar de notificações
 21 - SUPER (Win) + y                  = Abre seletor para trocar wallpaper
 22 - SUPER (Win) + Shift + t          = Abre o seletor de temas
-23 - SUPER (Win) + Shift + l          = Bloquear sistema
-24 - SUPER (Win) + Shift + m          = Desligar/Ligar monitor (não é suspender)
-25 - SUPER (Win) + Esc                = Sair do sistema
-26 - SUPER (Win) + Shift + r          = Recarregar Hyprland
+23 - SUPER (Win) + F5                 = Altera entre tema Dark e Light do GTK
+24 - SUPER (Win) + Shift + l          = Bloquear sistema
+25 - SUPER (Win) + Shift + m          = Desligar/Ligar monitor (não é suspender)
+26 - SUPER (Win) + Esc                = Sair do sistema
+27 - SUPER (Win) + Shift + r          = Recarregar Hyprland
 
 Atalhos de software »
 ------------------------------------------------
 ATALHO                                 DESCRIÇÃO
 
-27 - SUPER (Win) + Enter              = Terminal
-28 - SUPER (Win) + Space              = Gerenciador de arquivos
-29 - SUPER (Win) + b                  = Navegador padrão
-30 - SUPER (Win) + d                  = Lançador de programas
-31 - SUPER (Win) + c                  = Calculadora
-32 - SUPER (Win) + Ctrl + /?          = Cheatsheets do Kitty
-33 - SUPER (Win) + h                  = Histórico no Clipboard
-34 - SUPER (Win) + Shift + h          = Apagar histórico do Clipboard
-35 - SUPER (Win) + p                  = Seletor de cores (Color Picker)
-36 - ALT + SHIFT                      = Altera teclado entre "pt-br (abnt2)" e "us"
+28 - SUPER (Win) + Enter              = Terminal
+29 - SUPER (Win) + Space              = Gerenciador de arquivos
+30 - SUPER (Win) + b                  = Navegador padrão
+31 - SUPER (Win) + d                  = Lançador de programas
+32 - SUPER (Win) + c                  = Calculadora
+33 - SUPER (Win) + Ctrl + /?          = Cheatsheets do Kitty
+34 - SUPER (Win) + h                  = Histórico no Clipboard
+35 - SUPER (Win) + Shift + h          = Apagar histórico do Clipboard
+36 - SUPER (Win) + p                  = Seletor de cores (Color Picker)
+37 - ALT + SHIFT                      = Altera teclado entre "pt-br (abnt2)" e "us"
 
 
 Diretórios »

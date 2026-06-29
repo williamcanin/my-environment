@@ -301,6 +301,9 @@ hl.bind(mod .. " + Y", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/wallpaper-pick
 -- Theme switcher ------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd("sh ~/.config/my-environment/sh/theme-switch.sh"))
 
+-- GTK Theme Dark/Light ------------------------------------------------------------------------------------------------
+hl.bind(mod .. " + F5", hl.dsp.exec_cmd("sh ~/.config/my-environment/sh/gtk-theme.sh"))
+
 -- Finder --------------------------------------------------------------------------------------------------------------
 hl.bind(mod .. " + D", hl.dsp.exec_cmd('rofi -show drun -display-drun "drun"'))
 -- hl.bind(mod .. " + D", hl.dsp.exec_cmd("wofi"))
