@@ -1,6 +1,7 @@
 import QtQuick
 
 QtObject {
+    // --- Dark mode (default) ---
     readonly property color accent:          "#a2a2a2"
     readonly property color accentDim:       "#222222"
     readonly property color accentMid:       "#3C3C3C"
@@ -50,4 +51,42 @@ QtObject {
     readonly property int marginBottom:       1
     readonly property int marginRight:        1
     readonly property int sidebarWidth:       350
+
+    // --- Light mode overrides ---
+    readonly property QtObject light: QtObject {
+        readonly property color accent:          "#181818"
+        readonly property color accentDim:       "#cccccc"
+        readonly property color accentMid:       "#999999"
+        readonly property color accentFaint:     "#e0e0e0"
+        readonly property color accentLight:     "#aaaaaa"
+
+        readonly property color fgTitle:         "#181818"
+        readonly property color fgText:          "#181818"
+        readonly property color fgDim:           "#181818"
+        readonly property color fgSubtle:        "#181818"
+        readonly property color fgFaint:         "#bfbfbf"
+        readonly property color fgOnAccent:      "#cccccc"
+
+        readonly property color bg:              "#cccccc"
+        readonly property color bgPanel:         "#cccccc"
+        readonly property color bgCard:          "#b0b0b0"
+        readonly property color bgCardAlt:       "#b0b0b0"
+        readonly property color bgHeader:        "#b0b0b0"
+        readonly property color bgItem:          "#bfbfbf"
+        readonly property color bgItemHover:     "#d0d0d0"
+        readonly property color bgActive:        "#181818"
+
+        readonly property color border:          "#181818"
+        readonly property color borderStrong:    "#181818"
+        readonly property color borderItem:      "#181818"
+        readonly property color borderSubtle:    "#181818"
+
+        readonly property color scrollbarFg:    "#181818"
+        readonly property color scrollbarBg:    "#b0b0b0"
+
+        readonly property color danger:          "#181818"
+        readonly property color dangerDim:       "#181818"
+        readonly property color warn:            "#181818"
+        readonly property color ok:              "#cccccc"
+    }
 }

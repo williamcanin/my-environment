@@ -172,10 +172,17 @@ fi
 # Remove old lock screen image
 rm -f "$HYPRLOCK_PATH"
 
+# Reset GTK mode to dark (mode.css + .gtk-mode) when switching themes
+MODE_CSS="$(paths_config waybar/mode.css)"
+printf '/* mode.css — reset on theme switch */\n' > "$MODE_CSS"
+GTK_MODE_FILE="${HOME}/.config/my-environment/.gtk-mode"
+mkdir -p "$(dirname "$GTK_MODE_FILE")"
+printf 'dark\n' > "$GTK_MODE_FILE"
+
 # Reload Hyprland config
 hyprctl reload
 
-# Restart waybar with new theme CSS
+# Restart waybar with new theme CSS (mode.css is now clean/dark)
 sh "$(paths_config hypr/scripts/init.sh)" --waybars
 
 # Set wallpaper for the new theme
