@@ -31,7 +31,7 @@ hl.monitor({
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_SIZE", "24")
 -- Forces Qt apps to use Kvantum as their theme engine
-hl.env("QT_STYLE_OVERRIDE", "kvantum")
+-- hl.env("QT_STYLE_OVERRIDE", "kvantum")
 -- Use qt5ct to configure Qt (font, icons, style)
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 -- Forces Firefox to run natively on Wayland
