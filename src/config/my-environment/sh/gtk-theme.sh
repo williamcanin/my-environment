@@ -51,10 +51,10 @@ if [ "$MODE" = "light" ] && [ "$THEME" = "hyprashen" ]; then
 @define-color th-mpris-fg-anim   #181818;
 
 /* -- waybar/sysinfo.css variables -- */
-@define-color th-header          #888888;
+@define-color th-header          #181818;
 @define-color th-window-bg       #b0b0b0;
 @define-color th-border          #181818;
-@define-color th-border-header   #999999;
+@define-color th-border-header   #181818;
 @define-color th-disconnected    rgba(200, 200, 200, 0.3);
 CSSEOF
 else
